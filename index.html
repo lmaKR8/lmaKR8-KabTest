@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="author" content="KR.8">
+        <meta name="description" content="Web de Kab">
+        <meta name="keywords" content="arte, pintura, a lo gonzo, switch">
+        <title>INDEX</title>
+        <!-- Estilos generales -->
+        <link rel="stylesheet" href="src/css/reset.css">
+        <link rel="stylesheet" href="src/css/styles.css">
+        <!-- componentes -->
+        <link rel="stylesheet" href="src/components/organisms/carousel/carousel.css">
+        
+    </head>
+
+    <body>
+        <header></header>
+
+
+        <main>
+            <!-- [CARRUSEL] -->
+            <section class="carousel">
+                <!-- fondo del carrusel -->
+                <div class="carousel__background">
+                    <img class="carousel__background__img" src="/src/assets/img/carousel-background-1_1440x900.png" alt="imagen 1">
+                    <img class="carousel__background__img" src="/src/assets/img/carousel-background-2_1440x900.png" alt="imagen 2">
+                    <img class="carousel__background__img" src="/src/assets/img/carousel-background-3_1440x900.png" alt="imagen 3">
+                </div>
+                <!-- Contenido del carrusel -->
+                <div class="carousel__wrapper">
+                    <!-- izquierda -->
+                    <div class="carousel__contents">
+                        <div class="carousel__content carousel__content--active">
+                            <h2 class="carousel__title">CARRUSEL 1</h2>
+                            <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+                            <div class="carousel__dots">
+                                <span class="carousel__dot carousel__dot--active"></span>
+                                <span class="carousel__dot"></span>
+                                <span class="carousel__dot"></span>
+                            </div>
+                        </div>
+                        <div class="carousel__content">
+                            <h2 class="carousel__title">CARRUSEL 2</h2>
+                            <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+                            <div class="carousel__dots">
+                                <span class="carousel__dot"></span>
+                                <span class="carousel__dot"></span>
+                                <span class="carousel__dot"></span>
+                            </div>
+                        </div>
+                        <div class="carousel__content">
+                            <h2 class="carousel__title">CARRUSEL 3</h2>
+                            <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+                            <div class="carousel__dots">
+                                <span class="carousel__dot"></span>
+                                <span class="carousel__dot"></span>
+                                <span class="carousel__dot"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- derecha -->
+                    <div class="carousel__images">
+                        <img class="carousel__img carousel__img--active" src="/src/assets/img/carousel-img-1_650X650.png"
+                            alt="Imagen 1">
+                        <img class="carousel__img" src="/src/assets/img/carousel-img-2_650X650.png" alt="Imagen 2">
+                        <img class="carousel__img" src="/src/assets/img/carousel-img-3_650X650.png" alt="Imagen 3">
+                    </div>
+                </div>
+
+
+            </section>
+        </main>
+
+
+        <footer></footer>
+
+        <!-- Scripts -->
+        <script src="src/components/organisms/carousel/carousel.js"></script>
+    </body>
+</html>

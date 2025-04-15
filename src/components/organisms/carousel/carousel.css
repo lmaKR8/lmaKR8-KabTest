@@ -1,0 +1,184 @@
+@import url(/src/css/root.css);
+
+/* Contenedor principal */
+.carousel {
+    position: relative; /* Posicionamiento relativo para el carrusel */
+    width: 100%;       /* Ancho completo */
+    height: 100vh;     /* Altura completa de la ventana */
+    overflow: hidden;  /* Oculta el desbordamiento del carrusel */
+}
+
+/* Contenedor de imágenes de fondo */
+.carousel__background {
+    position: absolute; /* Posicionamiento absoluto para el fondo */
+    inset: 0;           /* Ajusta el fondo al tamaño del carrusel */
+    z-index: var(--z-normal); /* Z-index normal para el fondo */
+}
+
+.carousel__background__img {
+    position: absolute; /* Posicionamiento absoluto para las imágenes de fondo */
+    inset: 0;          /* Ajusta las imágenes al tamaño del contenedor */
+    width: 100%;      /* Ancho completo */
+    height: 100%;     /* Altura completa */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    opacity: 0;      /* Opacidad inicial 0 para las imágenes */
+    transform: scale(1.1); /* Escala inicial de las imágenes */
+    transition:
+        opacity var(--transition-normal),
+        transform var(--transition-normal); /* Transiciones para la opacidad y la escala */
+}
+
+.carousel__background__img.active {
+    opacity: 1; /* Opacidad 1 para la imagen activa */
+    transform: scale(1); /* Escala normal para la imagen activa */
+    z-index: 1; /* Z-index 1 para la imagen activa */
+}
+
+/* Contenedor del contenido */
+.carousel__wrapper {
+    position: relative; /* Posicionamiento relativo para el contenido */
+    z-index: var(--z-fixed); /* Z-index fijo para el contenido */
+    height: 100%; /* Altura completa del carrusel */
+    display: grid; /* Usar grid para el diseño */
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    align-items: center; /* Alineamiento vertical al centro */
+    gap: 2rem; /* Espacio entre columnas */
+    padding: 2rem max(2rem, 5%); /* Espacio interno del contenedor */
+}
+
+/* Contenido izquierdo */
+.carousel__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 3rem;
+    background: var(--gradient-w30-to-w05);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--color-white-30);
+    border-radius: 0.25rem;
+    max-width: 600px;
+    max-height: 400px; /* Altura máxima del contenedor */
+    margin: -5rem 0 0 5rem; /* Margen para el contenido */
+    
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+        opacity var(--transition-normal),
+        visibility var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.carousel__content--active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.carousel__title {
+    font-size: clamp(2rem, 5vw, var(--font-size-72)); 
+    font-family: var(--font-tittle-400);
+    color: var(--color-white);
+    font-weight: 400;
+}
+
+.carousel__text {
+    font-size: clamp(1rem, 2vw, var(--font-size-24));
+    font-family: var(--font-text-400);
+    color: var(--color-white);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Navegación */
+.carousel__dots {
+    display: flex; /* Usar flexbox para los puntos de navegación */
+    gap: 0.75rem; /* Espacio entre puntos */
+    margin-top: auto; /* Margen superior automático para alinear al final */
+    margin-bottom: 1rem;
+}
+
+.carousel__dot {
+    width: clamp(30px, 5vw, 50px); /* Ancho de los puntos */
+    height: 10px; /* Alto de los puntos */
+    border-radius: 5px; /* Bordes redondeados */
+    background: var(--color-white-20);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.carousel__dot--active {
+    background: var(--color-white);
+}
+
+/* Imagen lateral */
+.carousel__images {
+    justify-self: end; /* Justificar a la derecha */
+    width: 100%; /* Ancho completo */
+    max-width: 650px; /* Ancho máximo */
+    aspect-ratio: 1; /* Relación de aspecto 1:1 */
+}
+
+.carousel__img {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition:
+        opacity var(--transition-normal),
+        visibility var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.carousel__img--active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .carousel__wrapper {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 1rem; /* Espacio entre columnas */
+    }
+
+    .carousel__content {
+        max-width: 100%; /* Ancho.maxcdn */
+    }   
+
+    .carousel__images {
+        justify-self: center; /* Centrar la imagen */
+        max-width: 500px; /* Ancho máximo */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        min-height: 100vh; /* Altura mínima del carrusel */
+        height: auto; /* Altura automática */
+    }
+
+    .carousel__wrapper {
+        padding: 1rem; /* Espacio interno reducido */
+    }
+
+    .carousel__content {
+        padding: 1.5rem; /* Espacio interno reducido */
+    }
+
+    .carousel__images {
+        max-width: 400px; /* Ancho máximo */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel__content {
+        padding: 1rem;  /* Espacio interno reducido */
+    }
+
+    .carousel__images { 
+        max-width: 300px; /* Ancho.maxcdn */
+    }
+}
