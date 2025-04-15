@@ -4,3 +4,17 @@ body {
     background-color: var(--color-background);
 }
 
+.main {
+    position: relative;
+}
+
+.hero {
+    position: relative;
+    z-index: var(--z-carousel);
+}
+
+.wrapper,
+.other-content {
+    position: relative;
+    z-index: var(--z-content);
+}

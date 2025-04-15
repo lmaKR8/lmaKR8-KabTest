@@ -16,125 +16,194 @@
     </head>
 
     <body>
-        <header></header>
+        <br>
+        <header>AQUI VA EL NAVBAR</header>
+        <br>
 
 
         <main>
             <!-- [CARRUSEL] -->
-            <section class="carousel">
-                <!-- fondo del carrusel -->
-                <div class="carousel__background">
-                    <img class="carousel__background__img" src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png" alt="imagen 1">
-                    <img class="carousel__background__img" src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png" alt="imagen 2">
-                    <img class="carousel__background__img" src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png" alt="imagen 3">
-                </div>
-                <!-- Contenido del carrusel -->
-                <div class="carousel__wrapper">
-                    <!-- izquierda -->
-                    <div class="carousel__contents">
-                        <div class="carousel__content carousel__content--active">
-                            <h2 class="carousel__title">CARRUSEL 1</h2>
-                            <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-                            <div class="carousel__dots">
-                                <span class="carousel__dot carousel__dot--active"></span>
-                                <span class="carousel__dot"></span>
-                                <span class="carousel__dot"></span>
-                            </div>
-                        </div>
-                        <div class="carousel__content">
-                            <h2 class="carousel__title">CARRUSEL 2</h2>
-                            <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-                            <div class="carousel__dots">
-                                <span class="carousel__dot"></span>
-                                <span class="carousel__dot"></span>
-                                <span class="carousel__dot"></span>
-                            </div>
-                        </div>
-                        <div class="carousel__content">
-                            <h2 class="carousel__title">CARRUSEL 3</h2>
-                            <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-                            <div class="carousel__dots">
-                                <span class="carousel__dot"></span>
-                                <span class="carousel__dot"></span>
-                                <span class="carousel__dot"></span>
-                            </div>
-                        </div>
+            <section class="hero">
+                <div class="hero__carousel carousel">
+                    <!-- Fondo del carrusel -->
+                    <div class="carousel__background">
+                        <figure class="carousel__figure">
+                            <img class="carousel__background__img" src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png" alt="imagen 1">
+                        </figure>
+                        <figure>
+                            <img class="carousel__background__img" src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png" alt="imagen 2">
+                        </figure>
+                        <figure>
+                            <img class="carousel__background__img" src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png" alt="imagen 3">
+                        </figure>
                     </div>
 
-                    <!-- derecha -->
-                    <div class="carousel__images">
-                        <img class="carousel__img carousel__img--active" src="src/components/organisms/carousel/img/carousel-img-1_650x650.png" alt="Imagen 1">
-                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-2_650x650.png" alt="Imagen 2">
-                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-3_650x650.png" alt="Imagen 3">
+                    <!-- Contenedor principal -->
+                    <div class="carousel__container">
+                        <!-- Panel izquierdo -->
+                        <div class="carousel__content-wrapper">
+                            <article class="carousel__content">
+                                <h2 class="carousel__title">Título 1</h2>
+                                <p class="carousel__description">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
+                                    euismod tincidunt ut laoreet dolore.
+                                </p>
+                            </article>
+                            <article class="carousel__content">
+                                <h2 class="carousel__title">Título 2</h2>
+                                <p class="carousel__description">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore.
+                                </p>
+                            </article>
+                            <article class="carousel__content">
+                                <h2 class="carousel__title">Título 3</h2>
+                                <p class="carousel__description">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore.
+                                </p>
+                            </article>
+                            <!-- Botones de navegación -->
+                            <nav class="carousel__nav">
+                                <div class="carousel__dots">
+                                    <button class="carousel__dot" data-index="0"></button>
+                                    <button class="carousel__dot" data-index="1"></button>
+                                    <button class="carousel__dot" data-index="2"></button>
+                                </div>
+                            </nav>
+                        </div>
+
+                        <!-- Panel derecho -->
+                        <div class="carousel__media">
+                            <figure class="carousel__figure">
+                                <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-1_650x650.png" alt="Slide 1">
+                            </figure>
+                            <figure class="carousel__figure">
+                                <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-2_650x650.png" alt="Slide 2">
+                            </figure>
+                            <figure class="carousel__figure">
+                                <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-3_650x650.png" alt="Slide 3">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </section>
+                
 
 
             <!-- [GALERIA] -->
-            <section class="wrapper">
-                <nav>
-                    <div class="items">
-                        <span class="item active" data-name="all">Todos</span>
-                        <span class="item" data-name="cuadros">Cuadros</span>
-                        <span class="item" data-name="chaquetas">Chaquetas</span>
-                        <span class="item" data-name="misc">Misc</span>
-                    </div>
-                </nav>
-                <!-- filter Images -->
+            <section class="gallery-section">
+                <!-- Filtros -->
+                <div class="gallery-header">
+                    <nav class="gallery-nav">
+                        <div class="gallery-filters">
+                            <button class="gallery-filter active" data-name="all">Todos</button>
+                            <button class="gallery-filter" data-name="cuadros">Cuadros</button>
+                            <button class="gallery-filter" data-name="chaquetas">Chaquetas</button>
+                            <button class="gallery-filter" data-name="misc">Misc</button>
+                        </div>
+                    </nav>
+                    <h2 class="gallery-title">Mis trabajos</h2>
+                </div>
+
+                <!-- Imagenes -->
                 <div class="gallery">
-                    <div class="image" data-name="cuadros">
-                        <span><img src="src/components/organisms/gallery/img/gallery-1_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="cuadros">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-1_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="cuadros">
-                        <span><img src="src/components/organisms/gallery/img/gallery-2_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="cuadros">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-2_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="cuadros">
-                        <span><img src="src/components/organisms/gallery/img/gallery-3_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="cuadros">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-3_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="cuadros">
-                        <span><img src="src/components/organisms/gallery/img/gallery-4_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="cuadros">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-4_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="chaquetas">
-                        <span><img src="src/components/organisms/gallery/img/gallery-5_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="cuadros">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-5_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="chaquetas">
-                        <span><img src="src/components/organisms/gallery/img/gallery-6_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="chaquetas">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-6_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="chaquetas">
-                        <span><img src="src/components/organisms/gallery/img/gallery-7_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="chaquetas">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-7_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="chaquetas">
-                        <span><img src="src/components/organisms/gallery/img/gallery-8_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="chaquetas">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-8_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="chaquetas">
-                        <span><img src="src/components/organisms/gallery/img/gallery-9_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="chaquetas">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-9_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="misc">
-                        <span><img src="src/components/organisms/gallery/img/gallery-10_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="misc">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-10_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="misc">
-                        <span><img src="src/components/organisms/gallery/img/gallery-11_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="misc">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-11_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
                     </div>
-                    <div class="image" data-name="misc">
-                        <span><img src="src/components/organisms/gallery/img/gallery-12_300x300.png" alt=""></span>
+                    <div class="gallery-item" data-name="misc">
+                        <figure class="gallery-figure">
+                            <img src="src/components/organisms/gallery/img/gallery-12_300x300.png" alt="Nombre de la obra">
+                            <figcaption class="gallery-caption">Nombre de la obra</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            
+                <!-- Lightbox -->
+                <div class="lightbox">
+                    <button class="lightbox__close">&times;</button>
+                    <button class="lightbox__prev">&lt;</button>
+                    <button class="lightbox__next">&gt;</button>
+                    <div class="lightbox__content">
+                        <img src="" alt="" class="lightbox__image">
+                        <div class="lightbox__caption">
+                            <h3 class="lightbox__title"></h3>
+                            <p class="lightbox__category"></p>
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- fullscreen img preview box -->
-            <div class="preview-box">
-                <div class="details">
-                    <span class="title">Image Category: <p></p></span>
-                    <span class="icon fas fa-times"></span>
-                </div>
-                <div class="image-box"><img src="" alt=""></div>
-            </div>
-            <div class="shadow"></div>
+
+
 
         </main>
 
-
-        <footer></footer>
+        <br>
+        <footer>AQUI VA EL FOOTER</footer>
+        <br>
 
         <!-- Scripts -->
         <script src="src/components/organisms/carousel/carousel.js"></script>

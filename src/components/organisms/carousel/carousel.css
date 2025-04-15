@@ -1,69 +1,89 @@
+/* Importación de variables globales */
 @import url(/src/css/root.css);
 
-/* Contenedor principal */
-.carousel {
-    position: relative; /* Posicionamiento relativo para el carrusel */
-    width: 100%;       /* Ancho completo */
-    height: 900px;     /* Altura completa de la ventana */
-    overflow: hidden;  /* Oculta el desbordamiento del carrusel */
+/* ==========================================================================
+    Carrusel - Bloque principal
+   ========================================================================== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: var(--z-carousel);
 }
 
-/* Contenedor de imágenes de fondo */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+    Backgrounds
+   ========================================================================== */
 .carousel__background {
-    position: absolute; /* Posicionamiento absoluto para el fondo */
-    inset: 0;           /* Ajusta el fondo al tamaño del carrusel */
-    z-index: var(--z-normal); /* Z-index normal para el fondo */
+    position: absolute;
+    inset: 0;
+    z-index: var(--z-background);
+}
+
+.carousel__figure {
+    margin: 0;
+    height: 100%;
 }
 
 .carousel__background__img {
-    position: absolute; /* Posicionamiento absoluto para las imágenes de fondo */
-    inset: 0;          /* Ajusta las imágenes al tamaño del contenedor */
-    width: 100%;      /* Ancho completo */
-    height: 100%;     /* Altura completa */
-    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
-    opacity: 0;      /* Opacidad inicial 0 para las imágenes */
-    transform: scale(1.1); /* Escala inicial de las imágenes */
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.1);
     transition:
         opacity var(--transition-normal),
-        transform var(--transition-normal); /* Transiciones para la opacidad y la escala */
+        transform var(--transition-normal);
 }
 
 .carousel__background__img.active {
-    opacity: 1; /* Opacidad 1 para la imagen activa */
-    transform: scale(1); /* Escala normal para la imagen activa */
-    z-index: 1; /* Z-index 1 para la imagen activa */
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* Contenedor del contenido */
-.carousel__wrapper {
-    position: relative; /* Posicionamiento relativo para el contenido */
-    z-index: var(--z-fixed); /* Z-index fijo para el contenido */
-    height: 100%; /* Altura completa del carrusel */
-    display: grid; /* Usar grid para el diseño */
-    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-    align-items: center; /* Alineamiento vertical al centro */
-    gap: 2rem; /* Espacio entre columnas */
-    padding: 2rem max(2rem, 5%); /* Espacio interno del contenedor */
+/* ==========================================================================
+    Contenedor Principal
+   ========================================================================== */
+.carousel__container {
+    position: relative;
+    z-index: var(--z-content);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem max(2rem, 5%);
 }
 
-/* Contenido izquierdo */
+/* ==========================================================================
+    Panel Izquierdo - Contenido
+   ========================================================================== */
 .carousel__content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem 3rem;
+    padding: 2rem 1rem 5rem 3rem;
     background: var(--gradient-w30-to-w05);
     backdrop-filter: blur(4px);
     border: 1px solid var(--color-white-30);
     border-radius: 0.25rem;
     max-width: 600px;
-    max-height: 400px; /* Altura máxima del contenedor */
-    margin: -5rem 0 0 5rem; /* Margen para el contenido */
-    
+    max-height: 400px;
+    margin: -5rem 0 0 5rem;
     position: absolute;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
+    z-index: var(--z-overlay);
     transition:
         opacity var(--transition-normal),
         visibility var(--transition-normal),
@@ -77,13 +97,13 @@
 }
 
 .carousel__title {
-    font-size: clamp(2rem, 5vw, var(--font-size-72)); 
+    font-size: clamp(2rem, 5vw, var(--font-size-72));
     font-family: var(--font-tittle-400);
     color: var(--color-white);
     font-weight: 400;
 }
 
-.carousel__text {
+.carousel__description {
     font-size: clamp(1rem, 2vw, var(--font-size-24));
     font-family: var(--font-text-400);
     color: var(--color-white);
@@ -91,40 +111,60 @@
     line-height: 1.5;
 }
 
-/* Navegación */
+/* ==========================================================================
+    Navegación - Dots
+   ========================================================================== */
+.carousel__nav {
+    position: absolute;
+    bottom: 10rem;
+    left: 18rem;
+    transform: translateX(-50%);
+    z-index: var(--z-modal);
+}
+
 .carousel__dots {
-    display: flex; /* Usar flexbox para los puntos de navegación */
-    gap: 0.75rem; /* Espacio entre puntos */
-    margin-top: auto; /* Margen superior automático para alinear al final */
-    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.75rem;
 }
 
 .carousel__dot {
-    width: clamp(30px, 5vw, 50px); /* Ancho de los puntos */
-    height: 10px; /* Alto de los puntos */
-    border-radius: 5px; /* Bordes redondeados */
-    background: var(--color-white-20);
+    width: clamp(30px, 5vw, 50px);
+    height: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-white-20);
     cursor: pointer;
-    transition: background var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .carousel__dot--active {
-    background: var(--color-white);
+    background-color: var(--color-white);
+    transform: scale(1.1);
 }
 
-/* Imagen lateral */
-.carousel__images {
-    justify-self: end; /* Justificar a la derecha */
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Altura completa */
-    max-width: 650px; /* Ancho máximo */
-    max-height: 650px; /* Altura máxima */
-    margin: 10rem 0 0 10rem; /* Margen para la imagen */
-    aspect-ratio: 1; /* Relación de aspecto 1:1 */
+/* ==========================================================================
+    Panel Derecho - Imágenes
+   ========================================================================== */
+.carousel__media {
+    position: relative;
+    z-index: var(--z-overlay);
+    justify-self: end;
+    width: 100%;
+    height: 100%;
+    max-width: 650px;
+    max-height: 650px;
+    margin: 10rem 0 0 10rem;
+    aspect-ratio: 1;
+    position: relative;
 }
 
 .carousel__img {
     position: absolute;
+    inset: 0;
+    /* Asegura que la imagen cubra todo el contenedor */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     opacity: 0;
     visibility: hidden;
     transform: scale(0.9);
@@ -140,4 +180,63 @@
     transform: scale(1);
 }
 
-/* Media Queries */
+/* ==========================================================================
+    Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .carousel__container {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .carousel__content {
+        margin: 0;
+        padding: 1.5rem;
+    }
+
+    .carousel__media {
+        margin: 5rem 0 0 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel__container {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel__content {
+        position: relative;
+        max-width: 100%;
+        margin: 1rem;
+    }
+
+    .carousel__media {
+        margin: 2rem auto;
+        max-width: 80%;
+    }
+
+    .carousel__title {
+        font-size: clamp(1.5rem, 4vw, var(--font-size-48));
+    }
+
+    .carousel__description {
+        font-size: clamp(0.875rem, 1.5vw, var(--font-size-18));
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel__content {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .carousel__media {
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+
+    .carousel__dot {
+        width: clamp(20px, 4vw, 30px);
+        height: 8px;
+    }
+}
