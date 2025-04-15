@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="src/css/styles.css">
         <!-- componentes -->
         <link rel="stylesheet" href="src/components/organisms/carousel/carousel.css">
-        
+        <link rel="stylesheet" href="src/components/organisms/gallery/gallery.css">
     </head>
 
     <body>
@@ -24,9 +24,9 @@
             <section class="carousel">
                 <!-- fondo del carrusel -->
                 <div class="carousel__background">
-                    <img class="carousel__background__img" src="/src/assets/img/carousel-background-1_1440x900.png" alt="imagen 1">
-                    <img class="carousel__background__img" src="/src/assets/img/carousel-background-2_1440x900.png" alt="imagen 2">
-                    <img class="carousel__background__img" src="/src/assets/img/carousel-background-3_1440x900.png" alt="imagen 3">
+                    <img class="carousel__background__img" src="/src/components/organisms/carousel/img/carousel-background-1_1440x900.png" alt="imagen 1">
+                    <img class="carousel__background__img" src="/src/components/organisms/carousel/img/carousel-background-2_1440x900.png" alt="imagen 2">
+                    <img class="carousel__background__img" src="/src/components/organisms/carousel/img/carousel-background-3_1440x900.png" alt="imagen 3">
                 </div>
                 <!-- Contenido del carrusel -->
                 <div class="carousel__wrapper">
@@ -63,15 +63,52 @@
 
                     <!-- derecha -->
                     <div class="carousel__images">
-                        <img class="carousel__img carousel__img--active" src="/src/assets/img/carousel-img-1_650X650.png"
-                            alt="Imagen 1">
-                        <img class="carousel__img" src="/src/assets/img/carousel-img-2_650X650.png" alt="Imagen 2">
-                        <img class="carousel__img" src="/src/assets/img/carousel-img-3_650X650.png" alt="Imagen 3">
+                        <img class="carousel__img carousel__img--active" src="/src/components/organisms/carousel/img/carousel-img-1_650x650.png" alt="Imagen 1">
+                        <img class="carousel__img" src="/src/components/organisms/carousel/img/carousel-img-2_650x650.png" alt="Imagen 2">
+                        <img class="carousel__img" src="/src/components/organisms/carousel/img/carousel-img-3_650x650.png" alt="Imagen 3">
                     </div>
                 </div>
-
-
             </section>
+
+
+            <!-- [GALERIA] -->
+            <section class="wrapper">
+                <nav>
+                    <div class="items">
+                        <span class="item active" data-name="all">Todos</span>
+                        <span class="item" data-name="cuadros">Cuadros</span>
+                        <span class="item" data-name="chaquetas">Chaquetas</span>
+                        <span class="item" data-name="misc">Misc</span>
+                    </div>
+                </nav>
+                <!-- filter Images -->
+                <div class="gallery">
+                    <div class="image" data-name="cuadros">
+                        <span><img src="/src/components/organisms/gallery/img/gallery-1_300x300.png" alt=""></span>
+                    </div>
+                    <div class="image" data-name="cuadros"><span><img src="/src/components/organisms/gallery/img/gallery-2_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="cuadros"><span><img src="/src/components/organisms/gallery/img/gallery-3_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="cuadros"><span><img src="/src/components/organisms/gallery/img/gallery-4_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="chaquetas"><span><img src="/src/components/organisms/gallery/img/gallery-5_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="chaquetas"><span><img src="/src/components/organisms/gallery/img/gallery-6_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="chaquetas"><span><img src="/src/components/organisms/gallery/img/gallery-7_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="chaquetas"><span><img src="/src/components/organisms/gallery/img/gallery-8_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="chaquetas"><span><img src="/src/components/organisms/gallery/img/gallery-9_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="misc"><span><img src="/src/components/organisms/gallery/img/gallery-10_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="misc"><span><img src="/src/components/organisms/gallery/img/gallery-11_300x300.png" alt=""></span></div>
+                    <div class="image" data-name="misc"><span><img src="/src/components/organisms/gallery/img/gallery-12_300x300.png" alt=""></span></div>
+                </div>
+            </section>
+            <!-- fullscreen img preview box -->
+            <div class="preview-box">
+                <div class="details">
+                    <span class="title">Image Category: <p></p></span>
+                    <span class="icon fas fa-times"></span>
+                </div>
+                <div class="image-box"><img src="" alt=""></div>
+            </div>
+            <div class="shadow"></div>
+
         </main>
 
 
@@ -79,5 +116,6 @@
 
         <!-- Scripts -->
         <script src="src/components/organisms/carousel/carousel.js"></script>
+        <script src="src/components/organisms/gallery/gallery.js"></script>
     </body>
 </html>
