@@ -23,15 +23,20 @@ class Carousel {
             dots: [...element.querySelectorAll('.carousel__dot')]
         };
 
+        // Control de teclado
+        this.handleKeyboard = this.handleKeyboard.bind(this);
+        document.addEventListener('keydown', this.handleKeyboard);
+
         // Configuración
         this.config = {
-            autoplayDelay: 3000, // Tiempo entre transiciones automáticas
-            transitionDelay: 150, // Tiempo de transición de CSS
-            transitionDuration: 200, // Duración de la transición
-            minSwipeDistance: 50 // Distancia mínima para considerar un swipe
+            autoplayDelay: 5000,
+            transitionDelay: 300,
+            transitionDuration: 400,
+            minSwipeDistance: 50,
+            touchThreshold: 20
         };
 
-        // Inicialización0
+        // Inicialización
         this.init();
     }
 
@@ -183,6 +188,54 @@ class Carousel {
             const prevIndex = (this.state.currentIndex - 1 + totalSlides) % totalSlides;
             this.showSlide(prevIndex);
         }
+    }
+
+    handleKeyboard(e) {
+        switch(e.key) {
+            case 'ArrowLeft':
+                this.showSlide((this.state.currentIndex - 1 + this.elements.backgrounds.length) % this.elements.backgrounds.length);
+                break;
+            case 'ArrowRight':
+                this.nextSlide();
+                break;
+            case 'Escape':
+                this.stopAutoplay();
+                break;
+        }
+    }
+
+    setupTouchEvents() {
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        const touchStart = (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+            this.stopAutoplay();
+        };
+
+        const touchEnd = (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            
+            // Verificar si el swipe es más horizontal que vertical
+            if (Math.abs(touchEndX - touchStartX) > Math.abs(touchEndY - touchStartY)) {
+                const swipeDistance = touchStartX - touchEndX;
+                this.handleSwipe(swipeDistance);
+            }
+
+            this.startAutoplay();
+        };
+
+        this.elements.carousel.addEventListener('touchstart', touchStart, { passive: true });
+        this.elements.carousel.addEventListener('touchend', touchEnd, { passive: true });
+    }
+
+    destroy() {
+        // Limpieza de eventos
+        this.stopAutoplay();
+        document.removeEventListener('keydown', this.handleKeyboard);
+        // Remover otros event listeners...
     }
 }
 

@@ -22,6 +22,7 @@
     Backgrounds
    ========================================================================== */
 .carousel__background {
+    height: 100%;
     position: absolute;
     inset: 0;
     z-index: var(--z-background);
@@ -37,7 +38,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:fill;
     opacity: 0;
     transform: scale(1.1);
     transition:
@@ -78,7 +79,7 @@
     border-radius: 0.25rem;
     max-width: 600px;
     max-height: 400px;
-    margin: -6rem 0 1rem 5rem;
+    margin: -7rem 0 1rem 5rem;
     position: absolute;
     opacity: 0;
     visibility: hidden;
@@ -116,7 +117,7 @@
    ========================================================================== */
 .carousel__nav {
     position: absolute;
-    bottom: 10rem;
+    bottom: 13rem;
     left: 18rem;
     transform: translateX(-50%);
     z-index: var(--z-modal);
@@ -153,7 +154,7 @@
     height: 100%;
     max-width: 650px;
     max-height: 650px;
-    margin: 10rem 0 0 10rem;
+    margin: 1rem 1rem;
     aspect-ratio: 1;
     position: relative;
 }
@@ -186,57 +187,44 @@
 @media (max-width: 1200px) {
     .carousel__container {
         gap: 1rem;
-        padding: 1rem;
-    }
-
-    .carousel__content {
-        margin: 0;
-        padding: 1.5rem;
-    }
-
-    .carousel__media {
-        margin: 5rem 0 0 5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel__container {
+        padding: 2rem;
         grid-template-columns: 1fr;
     }
 
     .carousel__content {
+        margin: 2rem auto;
+        padding: 2rem;
         position: relative;
-        max-width: 100%;
-        margin: 1rem;
+        max-width: 90%;
     }
 
     .carousel__media {
         margin: 2rem auto;
-        max-width: 80%;
+        max-width: 90%;
+        max-height: 50vh;
     }
 
-    .carousel__title {
-        font-size: clamp(1.5rem, 4vw, var(--font-size-48));
-    }
-
-    .carousel__description {
-        font-size: clamp(0.875rem, 1.5vw, var(--font-size-18));
+    .carousel__nav {
+        bottom: 2rem;
+        left: 50%;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .carousel__content {
-        padding: 1rem;
-        gap: 1rem;
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .carousel__title {
+        font-size: clamp(1.5rem, 6vw, var(--font-size-48));
+    }
+
+    .carousel__description {
+        font-size: clamp(0.875rem, 4vw, var(--font-size-18));
     }
 
     .carousel__media {
-        max-width: 100%;
-        margin: 1rem auto;
-    }
-
-    .carousel__dot {
-        width: clamp(20px, 4vw, 30px);
-        height: 8px;
+        max-height: 40vh;
     }
 }

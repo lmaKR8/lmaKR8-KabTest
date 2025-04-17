@@ -5,8 +5,53 @@ class Gallery {
         this.items = document.querySelectorAll('.gallery-item');
         this.lightbox = document.querySelector('.lightbox');
         this.currentIndex = 0;
+
+        // Control de teclado para el lightbox
+        this.handleKeyboard = this.handleKeyboard.bind(this);
+        
+        // Mejora de rendimiento con IntersectionObserver
+        this.setupLazyLoading();
         
         this.init();
+    }
+
+        handleKeyboard(e) {
+        if (!this.lightbox.classList.contains('active')) return;
+
+        switch(e.key) {
+            case 'Escape':
+                this.closeLightbox();
+                break;
+            case 'ArrowLeft':
+                this.navigate(-1);
+                break;
+            case 'ArrowRight':
+                this.navigate(1);
+                break;
+        }
+    }
+
+    setupLazyLoading() {
+        const options = {
+            root: null,
+            rootMargin: '50px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target.querySelector('img');
+                    if (img && img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        this.items.forEach(item => observer.observe(item));
     }
 
     init() {
@@ -28,6 +73,11 @@ class Gallery {
         document.querySelector('.lightbox__close').addEventListener('click', () => this.closeLightbox());
         document.querySelector('.lightbox__prev').addEventListener('click', () => this.navigate(-1));
         document.querySelector('.lightbox__next').addEventListener('click', () => this.navigate(1));
+
+        document.addEventListener('keydown', this.handleKeyboard);
+        
+        // Prevenir scroll cuando el lightbox está activo
+        this.lightbox.addEventListener('wheel', e => e.preventDefault());
     }
 
     handleFilter(selectedFilter) {
