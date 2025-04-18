@@ -1,15 +1,12 @@
-/* Importación de variables globales */
+/* Variables globales */
 @import url(/src/css/root.css);
 
-/* ==========================================================================
-    Carrusel - Bloque principal
-   ========================================================================== */
+/* Base - Mobile First */
 .hero {
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
-    z-index: var(--z-carousel);
 }
 
 .carousel {
@@ -18,27 +15,24 @@
     height: 100%;
 }
 
-/* ==========================================================================
-    Backgrounds
-   ========================================================================== */
+/* Background */
 .carousel__background {
-    height: 100%;
     position: absolute;
     inset: 0;
     z-index: var(--z-background);
 }
 
-.carousel__figure {
+.carousel__background-figure {
     margin: 0;
     height: 100%;
 }
 
-.carousel__background__img {
+.carousel__background-image {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit:fill;
+    object-fit: cover;
     opacity: 0;
     transform: scale(1.1);
     transition:
@@ -46,185 +40,171 @@
         transform var(--transition-normal);
 }
 
-.carousel__background__img.active {
+.carousel__background-image--active {
     opacity: 1;
     transform: scale(1);
 }
 
-/* ==========================================================================
-    Contenedor Principal
-   ========================================================================== */
+/* Container */
 .carousel__container {
     position: relative;
     z-index: var(--z-content);
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem max(2rem, 5%);
-}
-
-/* ==========================================================================
-    Panel Izquierdo - Contenido
-   ========================================================================== */
-.carousel__content {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 1rem 5rem 3rem;
+    align-items: center;
+}
+
+/* Content Panel */
+.carousel__content-panel {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.carousel__slides {
+    position: relative;
+}
+
+.carousel__slide {
     background: var(--gradient-w30-to-w05);
     backdrop-filter: blur(4px);
     border: 1px solid var(--color-white-30);
     border-radius: 0.25rem;
-    max-width: 600px;
-    max-height: 400px;
-    margin: -7rem 0 1rem 5rem;
-    position: absolute;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    z-index: var(--z-overlay);
-    transition:
-        opacity var(--transition-normal),
-        visibility var(--transition-normal),
-        transform var(--transition-normal);
+    transition: all var(--transition-normal);
 }
 
-.carousel__content--active {
+.carousel__slide--active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-.carousel__title {
-    font-size: clamp(2rem, 5vw, var(--font-size-72));
+.carousel__slide-title {
     font-family: var(--font-tittle-400);
+    font-size: clamp(1.5rem, 6vw, var(--font-size-48));
     color: var(--color-white);
-    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
-.carousel__description {
-    font-size: clamp(1rem, 2vw, var(--font-size-24));
+.carousel__slide-description {
     font-family: var(--font-text-400);
+    font-size: clamp(0.875rem, 4vw, var(--font-size-18));
     color: var(--color-white);
-    font-weight: 500;
     line-height: 1.5;
 }
 
-/* ==========================================================================
-    Navegación - Dots
-   ========================================================================== */
-.carousel__nav {
-    position: absolute;
-    bottom: 13rem;
-    left: 18rem;
-    transform: translateX(-50%);
-    z-index: var(--z-modal);
+/* Navigation */
+.carousel__navigation {
+    margin: 1rem 0;
 }
 
-.carousel__dots {
+.carousel__navigation-dots {
     display: flex;
-    gap: 0.75rem;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.carousel__dot {
-    width: clamp(30px, 5vw, 50px);
-    height: 10px;
+.carousel__navigation-dot {
+    width: 2rem;
+    height: 0.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.25rem;
     background-color: var(--color-white-20);
     cursor: pointer;
     transition: all var(--transition-fast);
 }
 
-.carousel__dot--active {
+.carousel__navigation-dot--active {
     background-color: var(--color-white);
     transform: scale(1.1);
 }
 
-/* ==========================================================================
-    Panel Derecho - Imágenes
-   ========================================================================== */
-.carousel__media {
-    position: relative;
-    z-index: var(--z-overlay);
-    justify-self: end;
+/* Media Panel */
+.carousel__media-panel {
     width: 100%;
-    height: 100%;
-    max-width: 650px;
-    max-height: 650px;
-    margin: 1rem 1rem;
+    max-width: 400px;
     aspect-ratio: 1;
     position: relative;
+    margin: 1rem auto;
 }
 
-.carousel__img {
+.carousel__media-figure {
+    margin: 0;
+    height: 100%;
+}
+
+.carousel__media-image {
     position: absolute;
     inset: 0;
-    /* Asegura que la imagen cubra todo el contenedor */
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
     visibility: hidden;
     transform: scale(0.9);
-    transition:
-        opacity var(--transition-normal),
-        visibility var(--transition-normal),
-        transform var(--transition-normal);
+    transition: all var(--transition-normal);
 }
 
-.carousel__img--active {
+.carousel__media-image--active {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
 }
 
-/* ==========================================================================
-    Media Queries
-   ========================================================================== */
-@media (max-width: 1200px) {
+/* Tablet (768px) */
+@media (min-width: 48em) {
     .carousel__container {
-        gap: 1rem;
         padding: 2rem;
-        grid-template-columns: 1fr;
     }
 
-    .carousel__content {
-        margin: 2rem auto;
-        padding: 2rem;
-        position: relative;
-        max-width: 90%;
+    .carousel__content-panel {
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .carousel__media {
-        margin: 2rem auto;
-        max-width: 90%;
-        max-height: 50vh;
-    }
-
-    .carousel__nav {
-        bottom: 2rem;
-        left: 50%;
+    .carousel__media-panel {
+        max-width: 500px;
     }
 }
 
-@media (max-width: 768px) {
-    .carousel__content {
-        margin: 1rem;
-        padding: 1.5rem;
+/* Desktop (1024px) */
+@media (min-width: 64em) {
+    .carousel__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2rem max(2rem, 5%);
     }
 
-    .carousel__title {
-        font-size: clamp(1.5rem, 6vw, var(--font-size-48));
+    .carousel__content-panel {
+        margin: 0;
     }
 
-    .carousel__description {
-        font-size: clamp(0.875rem, 4vw, var(--font-size-18));
+    .carousel__slide {
+        padding: 2rem;
+        margin: 0;
     }
 
-    .carousel__media {
-        max-height: 40vh;
+    .carousel__media-panel {
+        max-width: 650px;
+        justify-self: end;
+    }
+}
+
+/* Large Desktop (1200px) */
+@media (min-width: 75em) {
+    .carousel__slide-title {
+        font-size: var(--font-size-72);
+    }
+
+    .carousel__slide-description {
+        font-size: var(--font-size-24);
     }
 }

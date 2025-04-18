@@ -67,7 +67,7 @@
 
 
     /* z-index */
-    --z-negative: -1; /* Z-index negativo */
+    --z-negative: -1;   /* Z-index negativo */
     --z-background: 1;   /* Z-index normal */
     --z-interfaz : 2;      /* Z-index para elementos de la interfaz */
     --z-content: 10; /* Z-index para tooltips */

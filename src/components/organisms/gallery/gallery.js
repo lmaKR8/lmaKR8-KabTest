@@ -1,33 +1,36 @@
 class Gallery {
     constructor() {
-        this.gallery = document.querySelector('.gallery');
-        this.filters = document.querySelectorAll('.gallery-filter');
-        this.items = document.querySelectorAll('.gallery-item');
-        this.lightbox = document.querySelector('.lightbox');
-        this.currentIndex = 0;
+        // Estado inicial
+        this.state = {
+            currentFilter: 'all',
+            currentLightboxIndex: 0,
+            items: []
+        };
 
-        // Control de teclado para el lightbox
-        this.handleKeyboard = this.handleKeyboard.bind(this);
-        
-        // Mejora de rendimiento con IntersectionObserver
-        this.setupLazyLoading();
-        
+        // Elementos DOM
+        this.elements = {
+            container: document.querySelector('.gallery'),
+            grid: document.querySelector('.gallery__grid'),
+            filters: document.querySelectorAll('.gallery__filter'),
+            items: document.querySelectorAll('.gallery__item'),
+            images: document.querySelectorAll('.gallery__image'),
+            lightbox: document.querySelector('.gallery__lightbox'),
+            lightboxImage: document.querySelector('.gallery__lightbox-image'),
+            lightboxClose: document.querySelector('.gallery__lightbox-close'),
+            lightboxPrev: document.querySelector('.gallery__lightbox-prev'),
+            lightboxNext: document.querySelector('.gallery__lightbox-next')
+        };
+
         this.init();
     }
 
-        handleKeyboard(e) {
-        if (!this.lightbox.classList.contains('active')) return;
-
-        switch(e.key) {
-            case 'Escape':
-                this.closeLightbox();
-                break;
-            case 'ArrowLeft':
-                this.navigate(-1);
-                break;
-            case 'ArrowRight':
-                this.navigate(1);
-                break;
+    init() {
+        try {
+            this.setupLazyLoading();
+            this.bindEvents();
+            this.filterItems('all'); // Mostrar todos los items inicialmente
+        } catch (error) {
+            console.error('Error inicializando galería:', error);
         }
     }
 
@@ -38,98 +41,93 @@ class Gallery {
             threshold: 0.1
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const img = entry.target.querySelector('img');
-                    if (img && img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                    }
-                    observer.unobserve(entry.target);
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
                 }
             });
         }, options);
 
-        this.items.forEach(item => observer.observe(item));
-    }
-
-    init() {
-        this.bindEvents();
+        this.elements.images.forEach(img => {
+            if (img.dataset.src) {
+                observer.observe(img);
+            }
+        });
     }
 
     bindEvents() {
-        // Filtros
-        this.filters.forEach(filter => {
-            filter.addEventListener('click', () => this.handleFilter(filter));
+        // Eventos de filtrado
+        this.elements.filters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                const category = filter.dataset.filter;
+                this.filterItems(category);
+                this.updateActiveFilter(filter);
+            });
         });
 
-        // Lightbox
-        this.items.forEach((item, index) => {
+        // Eventos de lightbox
+        this.elements.items.forEach((item, index) => {
             item.addEventListener('click', () => this.openLightbox(index));
         });
 
-        // Navegación Lightbox
-        document.querySelector('.lightbox__close').addEventListener('click', () => this.closeLightbox());
-        document.querySelector('.lightbox__prev').addEventListener('click', () => this.navigate(-1));
-        document.querySelector('.lightbox__next').addEventListener('click', () => this.navigate(1));
-
-        document.addEventListener('keydown', this.handleKeyboard);
-        
-        // Prevenir scroll cuando el lightbox está activo
-        this.lightbox.addEventListener('wheel', e => e.preventDefault());
+        this.elements.lightboxClose?.addEventListener('click', () => this.closeLightbox());
+        this.elements.lightboxPrev?.addEventListener('click', () => this.navigateLightbox('prev'));
+        this.elements.lightboxNext?.addEventListener('click', () => this.navigateLightbox('next'));
     }
 
-    handleFilter(selectedFilter) {
-        // Actualizar clases activas
-        this.filters.forEach(filter => {
-            filter.classList.remove('active');
-        });
-        selectedFilter.classList.add('active');
-
-        const filterValue = selectedFilter.dataset.name;
-
-        // Filtrar items
-        this.items.forEach(item => {
-            const shouldShow = filterValue === 'all' || item.dataset.name === filterValue;
+    filterItems(category) {
+        this.state.currentFilter = category;
+        this.elements.items.forEach(item => {
+            const itemCategory = item.dataset.category;
+            const shouldShow = category === 'all' || category === itemCategory;
             item.style.display = shouldShow ? 'block' : 'none';
         });
     }
 
+    updateActiveFilter(selectedFilter) {
+        this.elements.filters.forEach(filter => {
+            filter.classList.toggle('gallery__filter--active', filter === selectedFilter);
+        });
+    }
+
     openLightbox(index) {
-        this.currentIndex = index;
-        this.lightbox.classList.add('active');
-        this.updateLightboxContent();
-        document.body.style.overflow = 'hidden';
+        if (!this.elements.lightbox) return;
+
+        this.state.currentLightboxIndex = index;
+        const currentImage = this.elements.images[index];
+        
+        if (currentImage) {
+            this.elements.lightboxImage.src = currentImage.dataset.src || currentImage.src;
+            this.elements.lightbox.classList.add('gallery__lightbox--active');
+        }
     }
 
     closeLightbox() {
-        this.lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+        if (!this.elements.lightbox) return;
+        this.elements.lightbox.classList.remove('gallery__lightbox--active');
     }
 
-    navigate(direction) {
-        this.currentIndex = (this.currentIndex + direction + this.items.length) % this.items.length;
-        this.updateLightboxContent();
-    }
+    navigateLightbox(direction) {
+        const visibleItems = Array.from(this.elements.items).filter(
+            item => item.style.display !== 'none'
+        );
+        
+        let newIndex = this.state.currentLightboxIndex;
+        if (direction === 'prev') {
+            newIndex = (newIndex - 1 + visibleItems.length) % visibleItems.length;
+        } else {
+            newIndex = (newIndex + 1) % visibleItems.length;
+        }
 
-    updateLightboxContent() {
-        const item = this.items[this.currentIndex];
-        const img = item.querySelector('img');
-        const caption = item.querySelector('.gallery-caption');
-
-        const lightboxImg = this.lightbox.querySelector('.lightbox__image');
-        const lightboxTitle = this.lightbox.querySelector('.lightbox__title');
-        const lightboxCategory = this.lightbox.querySelector('.lightbox__category');
-
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightboxTitle.textContent = caption.textContent;
-        lightboxCategory.textContent = item.dataset.name;
+        this.openLightbox(newIndex);
     }
 }
 
-// Inicializar cuando el DOM esté listo
+// Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', () => {
     new Gallery();
 });
