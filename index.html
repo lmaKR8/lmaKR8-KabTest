@@ -16,92 +16,76 @@
     </head>
 
     <body>
-        <br>
-        <header>AQUI VA EL NAVBAR</header>
-        <br>
+        <header style="background-color: black; color: white; text-align: center; padding: 1rem">AQUI VA EL NAVBAR</header>
 
 
         <main>
+            
             <!-- [CARRUSEL] -->
-            <section class="hero">
-                <div class="carousel">
-                    <!-- Fondo del carrusel -->
-                    <div class="carousel__background">
-                        <figure class="carousel__background-figure">
-                            <img class="carousel__background-image"
-                                src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png"
-                                alt="Fondo carrusel 1">
-                        </figure>
-                        <figure class="carousel__background-figure">
-                            <img class="carousel__background-image"
-                                src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png"
-                                alt="Fondo carrusel 2">
-                        </figure>
-                        <figure class="carousel__background-figure">
-                            <img class="carousel__background-image"
-                                src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png"
-                                alt="Fondo carrusel 3">
-                        </figure>
+            <section class="carousel" aria-label="Galería de imágenes destacadas">
+                <!-- Fondo del carrusel -->
+                <div class="carousel__background" aria-hidden="true">
+                    <img class="carousel__background-img"
+                        src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png" alt="" loading="lazy">
+                    <img class="carousel__background-img"
+                        src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png" alt="" loading="lazy">
+                    <img class="carousel__background-img"
+                        src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png" alt="" loading="lazy">
+                </div>
+
+                <!-- Contenedor principal -->
+                <div class="carousel__wrapper">
+                    <!-- Contenido y navegación -->
+                    <div class="carousel__content-container">
+                        <!-- Slides -->
+                        <div class="carousel__slides" role="group" aria-label="Slides del carrusel">
+                            <article class="carousel__slide">
+                                <h2 class="carousel__title">CARRUSEL 1</h2>
+                                <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </article>
+
+                            <article class="carousel__slide">
+                                <h2 class="carousel__title">CARRUSEL 2</h2>
+                                <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </article>
+
+                            <article class="carousel__slide">
+                                <h2 class="carousel__title">CARRUSEL 3</h2>
+                                <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </article>
+                        </div>
+
+                        <!-- Navegación -->
+                        <nav class="carousel__nav" aria-label="Navegación del carrusel">
+                            <button class="carousel__button carousel__button--prev" aria-label="Anterior">
+                                <span class="carousel__button-icon" aria-hidden="true">&lt;</span>
+                            </button>
+
+                            <div class="carousel__dots" role="tablist">
+                                <button class="carousel__dot" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                                <button class="carousel__dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                                <button class="carousel__dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+                            </div>
+
+                            <button class="carousel__button carousel__button--next" aria-label="Siguiente">
+                                <span class="carousel__button-icon" aria-hidden="true">&gt;</span>
+                            </button>
+                        </nav>
                     </div>
 
-                    <div class="carousel__container">
-                        <!-- Panel de contenido -->
-                        <div class="carousel__content-panel">
-                            <nav class="carousel__navigation">
-                                <div class="carousel__navigation-dots">
-                                    <button class="carousel__navigation-dot" data-index="0" aria-label="Ir a slide 1"></button>
-                                    <button class="carousel__navigation-dot" data-index="1" aria-label="Ir a slide 2"></button>
-                                    <button class="carousel__navigation-dot" data-index="2" aria-label="Ir a slide 3"></button>
-                                </div>
-                            </nav>
-
-                            <div class="carousel__slides">
-                                <article class="carousel__slide">
-                                    <h2 class="carousel__slide-title">Título 1</h2>
-                                    <p class="carousel__slide-description">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                        euismod tincidunt ut laoreet dolore.
-                                    </p>
-                                </article>
-                                <article class="carousel__slide">
-                                    <h2 class="carousel__slide-title">Título 2</h2>
-                                    <p class="carousel__slide-description">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                        euismod tincidunt ut laoreet dolore.
-                                    </p>
-                                </article>
-                                <article class="carousel__slide">
-                                    <h2 class="carousel__slide-title">Título 3</h2>
-                                    <p class="carousel__slide-description">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                        euismod tincidunt ut laoreet dolore.
-                                    </p>
-                                </article>
-                            </div>
-                        </div>
-
-                        <!-- Panel de imágenes -->
-                        <div class="carousel__media-panel">
-                            <figure class="carousel__media-figure">
-                                <img class="carousel__media-image"
-                                    src="src/components/organisms/carousel/img/carousel-img-1_650x650.png" alt="Imagen carrusel 1">
-                            </figure>
-                            <figure class="carousel__media-figure">
-                                <img class="carousel__media-image"
-                                    src="src/components/organisms/carousel/img/carousel-img-2_650x650.png" alt="Imagen carrusel 2">
-                            </figure>
-                            <figure class="carousel__media-figure">
-                                <img class="carousel__media-image"
-                                    src="src/components/organisms/carousel/img/carousel-img-3_650x650.png" alt="Imagen carrusel 3">
-                            </figure>
-                        </div>
+                    <!-- Imágenes destacadas -->
+                    <div class="carousel__images" aria-hidden="true">
+                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-1_650x650.png" alt=""
+                            loading="lazy">
+                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-2_650x650.png" alt=""
+                            loading="lazy">
+                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-3_650x650.png" alt=""
+                            loading="lazy">
                     </div>
                 </div>
             </section>
-            
-            
-            
-            
+                            
+            <!-- [GALERIA] -->
             <!-- Imagenes -->
             <section class="gallery">
                 <!-- Header y Filtros -->
@@ -257,7 +241,7 @@
         </main>
 
         <br>
-        <footer>AQUI VA EL FOOTER</footer>
+        <footer style="background-color: black; color: white; text-align: center; padding: 1rem">AQUI VA EL FOOTER</footer>
         <br>
 
         <!-- Scripts -->

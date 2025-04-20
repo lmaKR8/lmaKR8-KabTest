@@ -1,137 +1,163 @@
 class Carousel {
     constructor(element) {
-        // Estado inicial
-        this.state = {
-            currentIndex: 0,
-            isTransitioning: false,
-            autoplayInterval: null
-        };
+        // Elementos del DOM
+        this.carousel = element;
+        this.backgrounds = [...this.carousel.querySelectorAll('.carousel__background-img')];
+        this.slides = [...this.carousel.querySelectorAll('.carousel__slide')];
+        this.images = [...this.carousel.querySelectorAll('.carousel__img')];
+        this.dots = [...this.carousel.querySelectorAll('.carousel__dot')];
+        this.prevButton = this.carousel.querySelector('.carousel__button--prev');
+        this.nextButton = this.carousel.querySelector('.carousel__button--next');
 
-        // Elementos DOM
-        this.elements = {
-            carousel: element,
-            backgrounds: [...element.querySelectorAll('.carousel__background-image')],
-            slides: [...element.querySelectorAll('.carousel__slide')],
-            mediaImages: [...element.querySelectorAll('.carousel__media-image')],
-            dots: [...element.querySelectorAll('.carousel__navigation-dot')]
-        };
-
-        // Vincular métodos al contexto
-        this.handleKeyboard = this.handleKeyboard.bind(this);
-        this.handleTouchStart = this.handleTouchStart.bind(this);
-        this.handleTouchEnd = this.handleTouchEnd.bind(this);
-        this.handleMouseEnter = () => this.stopAutoplay();
-        this.handleMouseLeave = () => this.startAutoplay();
-
-        // Configuración
-        this.config = {
-            autoplayDelay: 5000,
-            transitionDelay: 300,
-            transitionDuration: 400,
-            minSwipeDistance: 50,
-            touchThreshold: 20
-        };
-
-        this.touchData = {
-            startX: 0,
-            startY: 0
-        };
+        // Estado
+        this.currentIndex = 0;
+        this.isTransitioning = false;
+        this.autoplayInterval = null;
+        this.autoplayDelay = 3000;
+        this.touchStartX = 0;
+        this.minSwipeDistance = 50;
 
         // Inicialización
         this.init();
     }
 
     init() {
-        try {
-            this.validateElements();
-            this.showSlide(0);
-            this.bindEvents();
-            this.startAutoplay();
-        } catch (error) {
-            console.error('Error al inicializar el carrusel:', error);
-        }
-    }
+        // Mostrar primer slide
+        this.showSlide(0);
 
-    validateElements() {
-        const requiredElements = ['backgrounds', 'slides', 'mediaImages', 'dots'];
-        requiredElements.forEach(key => {
-            if (!this.elements[key].length) {
-                throw new Error(`No se encontraron elementos ${key}`);
-            }
-        });
+        // Eventos
+        this.bindEvents();
+
+        // Iniciar autoplay
+        this.startAutoplay();
+
+        // Anunciar para lectores de pantalla
+        this.announceSlide();
     }
 
     bindEvents() {
-        // Eventos de los dots
-        this.elements.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.handleDotClick(index));
+        // Navegación con botones
+        this.prevButton?.addEventListener('click', () => this.prevSlide());
+        this.nextButton?.addEventListener('click', () => this.nextSlide());
+
+        // Navegación con dots
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.showSlide(index));
         });
 
-        // Eventos de hover
-        this.elements.carousel.addEventListener('mouseenter', this.handleMouseEnter);
-        this.elements.carousel.addEventListener('mouseleave', this.handleMouseLeave);
+        // Control de autoplay
+        this.carousel.addEventListener('mouseenter', () => this.stopAutoplay());
+        this.carousel.addEventListener('mouseleave', () => this.startAutoplay());
+        this.carousel.addEventListener('focusin', () => this.stopAutoplay());
+        this.carousel.addEventListener('focusout', () => this.startAutoplay());
 
         // Eventos táctiles
-        this.elements.carousel.addEventListener('touchstart', this.handleTouchStart, { passive: true });
-        this.elements.carousel.addEventListener('touchend', this.handleTouchEnd, { passive: true });
+        this.carousel.addEventListener('touchstart', this.handleTouchStart.bind(this));
+        this.carousel.addEventListener('touchend', this.handleTouchEnd.bind(this));
 
-        // Eventos de teclado
-        document.addEventListener('keydown', this.handleKeyboard);
+        // Teclas de accesibilidad
+        this.carousel.addEventListener('keydown', this.handleKeydown.bind(this));
+    }
+
+    showSlide(index) {
+        if (this.isTransitioning || index === this.currentIndex) return;
+
+        // Prevenir múltiples transiciones
+        this.isTransitioning = true;
+
+        // Actualizar clases
+        this.backgrounds[this.currentIndex].classList.remove('is-active');
+        this.slides[this.currentIndex].classList.remove('is-active');
+        this.images[this.currentIndex].classList.remove('is-active');
+        this.dots[this.currentIndex].setAttribute('aria-selected', 'false');
+
+        // Activar nuevo slide
+        this.currentIndex = index;
+        this.backgrounds[index].classList.add('is-active');
+        this.slides[index].classList.add('is-active');
+        this.images[index].classList.add('is-active');
+        this.dots[index].setAttribute('aria-selected', 'true');
+
+        // Anunciar cambio
+        this.announceSlide();
+
+        // Permitir nueva transición
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 300);
+    }
+
+    prevSlide() {
+        const prevIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+        this.showSlide(prevIndex);
+    }
+
+    nextSlide() {
+        const nextIndex = (this.currentIndex + 1) % this.slides.length;
+        this.showSlide(nextIndex);
+    }
+
+    startAutoplay() {
+        if (!this.autoplayInterval) {
+            this.autoplayInterval = setInterval(() => this.nextSlide(), this.autoplayDelay);
+        }
+    }
+
+    stopAutoplay() {
+        clearInterval(this.autoplayInterval);
+        this.autoplayInterval = null;
     }
 
     handleTouchStart(e) {
-        this.touchData.startX = e.changedTouches[0].screenX;
-        this.touchData.startY = e.changedTouches[0].screenY;
-        this.stopAutoplay();
+        this.touchStartX = e.touches[0].clientX;
     }
 
     handleTouchEnd(e) {
-        const touchEndX = e.changedTouches[0].screenX;
-        const touchEndY = e.changedTouches[0].screenY;
-        
-        if (Math.abs(touchEndX - this.touchData.startX) > Math.abs(touchEndY - this.touchData.startY)) {
-            const swipeDistance = this.touchData.startX - touchEndX;
-            this.handleSwipe(swipeDistance);
-        }
+        const touchEndX = e.changedTouches[0].clientX;
+        const deltaX = this.touchStartX - touchEndX;
 
-        this.startAutoplay();
-    }
-
-    updateActiveClasses(index, isActive) {
-        const action = isActive ? 'add' : 'remove';
-        const activeClass = '--active';
-        
-        try {
-            this.elements.backgrounds[index].classList[action](`carousel__background-image${activeClass}`);
-            this.elements.slides[index].classList[action](`carousel__slide${activeClass}`);
-            this.elements.mediaImages[index].classList[action](`carousel__media-image${activeClass}`);
-        } catch (error) {
-            console.error('Error al actualizar clases activas:', error);
+        if (Math.abs(deltaX) > this.minSwipeDistance) {
+            deltaX > 0 ? this.nextSlide() : this.prevSlide();
         }
     }
 
-    destroy() {
-        // Limpieza de eventos
-        this.stopAutoplay();
-        
-        document.removeEventListener('keydown', this.handleKeyboard);
-        this.elements.carousel.removeEventListener('mouseenter', this.handleMouseEnter);
-        this.elements.carousel.removeEventListener('mouseleave', this.handleMouseLeave);
-        this.elements.carousel.removeEventListener('touchstart', this.handleTouchStart);
-        this.elements.carousel.removeEventListener('touchend', this.handleTouchEnd);
-        
-        this.elements.dots.forEach((dot, index) => {
-            dot.removeEventListener('click', () => this.handleDotClick(index));
-        });
+    handleKeydown(e) {
+        switch (e.key) {
+            case 'ArrowLeft':
+                this.prevSlide();
+                break;
+            case 'ArrowRight':
+                this.nextSlide();
+                break;
+            case 'Home':
+                this.showSlide(0);
+                break;
+            case 'End':
+                this.showSlide(this.slides.length - 1);
+                break;
+        }
+    }
+
+    announceSlide() {
+        // Anunciar para lectores de pantalla
+        const liveRegion = this.carousel.querySelector('[aria-live]') || 
+            (() => {
+                const region = document.createElement('div');
+                region.setAttribute('aria-live', 'polite');
+                region.setAttribute('aria-atomic', 'true');
+                region.classList.add('visually-hidden');
+                this.carousel.appendChild(region);
+                return region;
+            })();
+
+        const currentSlide = this.slides[this.currentIndex];
+        const title = currentSlide.querySelector('.carousel__title').textContent;
+        liveRegion.textContent = `Mostrando slide ${this.currentIndex + 1} de ${this.slides.length}: ${title}`;
     }
 }
 
-// Inicialización cuando el DOM está listo
+// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    try {
-        const carousel = document.querySelector('.carousel');
-        if (carousel) new Carousel(carousel);
-    } catch (error) {
-        console.error('Error al inicializar el carrusel:', error);
-    }
+    const carousel = document.querySelector('.carousel');
+    if (carousel) new Carousel(carousel);
 });
