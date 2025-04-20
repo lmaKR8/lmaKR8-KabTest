@@ -12,17 +12,23 @@
 .gallery__header {
     display: flex;
     flex-direction: column;
+    min-height: 200px; /* Altura mínima para ver el efecto */
     gap: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    margin: 2rem;
+    padding-bottom: 2rem;
 
 }
 
 .gallery__title {
+    margin-top: auto; /* Empuja el título hacia abajo */
     font-family: var(--font-tittle-400);
     font-size: clamp(2rem, 5vw, var(--font-size-72));
     color: var(--color-primary);
     font-weight: 400;
+}
+
+.gallery__nav {
+    width: 100%;
 }
 
 /* Filters */
@@ -31,6 +37,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .gallery__filter {
@@ -125,6 +132,28 @@
     object-fit: contain;
 }
 
+.gallery__lightbox-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: var(--color-black-30);
+    color: var(--color-white);
+}
+
+.gallery__lightbox-title {
+    font-family: var(--font-tittle-400);
+    font-size: var(--font-size-24);
+    margin-bottom: 0.5rem;
+}
+
+.gallery__lightbox-category {
+    font-family: var(--font-text-400);
+    font-size: var(--font-size-16);
+    color: var(--color-white-50);
+}
+
 .gallery__lightbox-close,
 .gallery__lightbox-prev,
 .gallery__lightbox-next {
@@ -176,8 +205,23 @@
     .gallery__header {
         flex-direction: row;
         justify-content: space-between;
-        text-align: left;
+        align-items: flex-end; /* Alinea los elementos al bottom */
     }
+
+    .gallery__title {
+        margin: 0;
+        /* Elimina el margen en desktop */
+    }
+
+    .gallery__nav {
+        width: auto;
+    }
+
+    .gallery__filters {
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+    
 
     .gallery__filter {
         width: auto;
