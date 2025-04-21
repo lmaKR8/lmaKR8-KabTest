@@ -6,18 +6,48 @@
         <meta name="author" content="KR.8">
         <meta name="description" content="Web de Kab">
         <meta name="keywords" content="arte, pintura, a lo gonzo, switch">
-        <title>INDEX</title>
+        <title>KAB TEST</title>
         <!-- Estilos generales -->
         <link rel="stylesheet" href="src/css/reset.css">
         <link rel="stylesheet" href="src/css/styles.css">
         <!-- componentes -->
         <link rel="stylesheet" href="src/components/organisms/carousel/carousel.css">
         <link rel="stylesheet" href="src/components/organisms/gallery/gallery.css">
+        <link rel="stylesheet" href="src/components/organisms/navbar/navbar.css">
     </head>
 
     <body>
-        <header style="background-color: black; color: white; text-align: center; padding: 1rem">AQUI VA EL NAVBAR</header>
+<header class="navbar">
+    <div class="navbar__container">
+        <!-- Menú de navegación (ahora a la izquierda) -->
+        <nav class="navbar__menu" id="navbar-menu" aria-label="Menú principal">
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <a href="#inicio" class="navbar__link navbar__link--active">INICIO</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#galeria" class="navbar__link">GALERIA</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#sobre-mi" class="navbar__link">SOBRE MI</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#contacto" class="navbar__link">CONTACTO</a>
+                </li>
+            </ul>
+        </nav>
 
+        <!-- Logo (ahora a la derecha) -->
+        <a href="/" class="navbar__logo">
+            <span class="navbar__logo-text">LOGO</span>
+        </a>
+
+        <!-- Botón de menú móvil -->
+        <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbar-menu">
+            <span class="navbar__toggle-icon"></span>
+        </button>
+    </div>
+</header>
 
         <main>
             
@@ -41,35 +71,30 @@
                         <div class="carousel__slides" role="group" aria-label="Slides del carrusel">
                             <article class="carousel__slide">
                                 <h2 class="carousel__title">CARRUSEL 1</h2>
-                                <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet esse sunt temporibus sed delectus. <br><br>
+                                                        Sint, nemo tenetur est at reprehenderit ullam facere, facilis nesciunt molestiae natus dolore in sed doloribus.</p>
                             </article>
 
                             <article class="carousel__slide">
                                 <h2 class="carousel__title">CARRUSEL 2</h2>
-                                <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet esse sunt temporibus sed delectus. <br><br>
+                                                        Sint, nemo tenetur est at reprehenderit ullam facere, facilis nesciunt molestiae natus dolore in sed doloribus.</p>
                             </article>
 
                             <article class="carousel__slide">
                                 <h2 class="carousel__title">CARRUSEL 3</h2>
-                                <p class="carousel__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet esse sunt temporibus sed delectus. <br><br>
+                                                        Sint, nemo tenetur est at reprehenderit ullam facere, facilis nesciunt molestiae natus dolore in sed doloribus.</p>
                             </article>
                         </div>
 
                         <!-- Navegación -->
                         <nav class="carousel__nav" aria-label="Navegación del carrusel">
-                            <button class="carousel__button carousel__button--prev" aria-label="Anterior">
-                                <span class="carousel__button-icon" aria-hidden="true">&lt;</span>
-                            </button>
-
                             <div class="carousel__dots" role="tablist">
                                 <button class="carousel__dot" role="tab" aria-selected="true" aria-label="Slide 1"></button>
                                 <button class="carousel__dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
                                 <button class="carousel__dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
                             </div>
-
-                            <button class="carousel__button carousel__button--next" aria-label="Siguiente">
-                                <span class="carousel__button-icon" aria-hidden="true">&gt;</span>
-                            </button>
                         </nav>
                     </div>
 
@@ -247,5 +272,6 @@
         <!-- Scripts -->
         <script src="src/components/organisms/carousel/carousel.js"></script>
         <script src="src/components/organisms/gallery/gallery.js"></script>
+        <script src="src/components/organisms/navbar/navbar.js"></script>
     </body>
 </html>
