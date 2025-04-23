@@ -11,107 +11,67 @@
         <link rel="stylesheet" href="src/css/reset.css">
         <link rel="stylesheet" href="src/css/styles.css">
         <!-- componentes -->
-        <link rel="stylesheet" href="src/components/organisms/carousel/carousel.css">
+        <link rel="stylesheet" href="src/components/organisms/slider/slider.css">
         <link rel="stylesheet" href="src/components/organisms/gallery/gallery.css">
         <link rel="stylesheet" href="src/components/organisms/navbar/navbar.css">
     </head>
 
     <body>
-<header class="navbar">
-    <div class="navbar__container">
-        <!-- Menú de navegación (ahora a la izquierda) -->
-        <nav class="navbar__menu" id="navbar-menu" aria-label="Menú principal">
-            <ul class="navbar__list">
-                <li class="navbar__item">
-                    <a href="#inicio" class="navbar__link navbar__link--active">INICIO</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#galeria" class="navbar__link">GALERIA</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#sobre-mi" class="navbar__link">SOBRE MI</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#contacto" class="navbar__link">CONTACTO</a>
-                </li>
-            </ul>
-        </nav>
+        <header class="navbar">
+            <div class="navbar__container">
+                <!-- Menú de navegación (izquierda) -->
+                <nav class="navbar__menu" id="navbar-menu" aria-label="Menú principal">
+                    <ul class="navbar__list">
+                        <li class="navbar__item">
+                            <a href="#inicio" class="navbar__link navbar__link--active">INICIO</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#galeria" class="navbar__link">GALERIA</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#sobre-mi" class="navbar__link">SOBRE MI</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#contacto" class="navbar__link">CONTACTO</a>
+                        </li>
+                    </ul>
+                </nav>
 
-        <!-- Logo (ahora a la derecha) -->
-        <a href="/" class="navbar__logo">
-            <span class="navbar__logo-text">LOGO</span>
-        </a>
+                <!-- Logo (derecha) -->
+                <a href="/" class="navbar__logo">
+                    <span class="navbar__logo-text">LOGO</span>
+                </a>
 
-        <!-- Botón de menú móvil -->
-        <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbar-menu">
-            <span class="navbar__toggle-icon"></span>
-        </button>
-    </div>
-</header>
+                <!-- Botón de menú móvil -->
+                <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbar-menu">
+                    <span class="navbar__toggle-icon"></span>
+                </button>
+            </div>
+        </header>
 
         <main>
-            
-            <!-- [CARRUSEL] -->
-            <section class="carousel" aria-label="Galería de imágenes destacadas">
-                <!-- Fondo del carrusel -->
-                <div class="carousel__background" aria-hidden="true">
-                    <img class="carousel__background-img"
-                        src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png" alt="" loading="lazy">
-                    <img class="carousel__background-img"
-                        src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png" alt="" loading="lazy">
-                    <img class="carousel__background-img"
-                        src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png" alt="" loading="lazy">
-                </div>
-
-                <!-- Contenedor principal -->
-                <div class="carousel__wrapper">
-                    <!-- Contenido y navegación -->
-                    <div class="carousel__content-container">
-                        <!-- Slides -->
-                        <div class="carousel__slides" role="group" aria-label="Slides del carrusel">
-                            <article class="carousel__slide">
-                                <h2 class="carousel__title">CARRUSEL 1</h2>
-                                <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet esse sunt temporibus sed delectus. <br><br>
-                                                        Sint, nemo tenetur est at reprehenderit ullam facere, facilis nesciunt molestiae natus dolore in sed doloribus.</p>
-                            </article>
-
-                            <article class="carousel__slide">
-                                <h2 class="carousel__title">CARRUSEL 2</h2>
-                                <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet esse sunt temporibus sed delectus. <br><br>
-                                                        Sint, nemo tenetur est at reprehenderit ullam facere, facilis nesciunt molestiae natus dolore in sed doloribus.</p>
-                            </article>
-
-                            <article class="carousel__slide">
-                                <h2 class="carousel__title">CARRUSEL 3</h2>
-                                <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet esse sunt temporibus sed delectus. <br><br>
-                                                        Sint, nemo tenetur est at reprehenderit ullam facere, facilis nesciunt molestiae natus dolore in sed doloribus.</p>
-                            </article>
-                        </div>
-
-                        <!-- Navegación -->
-                        <nav class="carousel__nav" aria-label="Navegación del carrusel">
-                            <div class="carousel__dots" role="tablist">
-                                <button class="carousel__dot" role="tab" aria-selected="true" aria-label="Slide 1"></button>
-                                <button class="carousel__dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
-                                <button class="carousel__dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
-                            </div>
-                        </nav>
+            <!-- [SLIDER] -->
+            <section class="container" id="container">
+                <div class="caption" id="slider-caption">
+                    <div class="caption-heading">
+                        <h2 class="caption-title">Lorem Ipsum</h2>
                     </div>
-
-                    <!-- Imágenes destacadas -->
-                    <div class="carousel__images" aria-hidden="true">
-                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-1_650x650.png" alt=""
-                            loading="lazy">
-                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-2_650x650.png" alt=""
-                            loading="lazy">
-                        <img class="carousel__img" src="src/components/organisms/carousel/img/carousel-img-3_650x650.png" alt=""
-                            loading="lazy">
-                    </div>
+                    <div class="caption-subhead"><span>dolor sit amet, consectetur adipiscing elit.</span></div><a class="btn"
+                        href="#">Sit Amet</a>
                 </div>
+                <div class="left-col" id="left-col">
+                    <div id="left-slider"></div>
+                </div>
+                <ul class="nav">
+                    <li class="slide-up"> <a href="#">
+                            << /a>
+                    </li>
+                    <li class="slide-down"> <a id="down_button" href="#">></a></li>
+                </ul>
             </section>
-                            
+
+            
             <!-- [GALERIA] -->
-            <!-- Imagenes -->
             <section class="gallery">
                 <!-- Header y Filtros -->
                 <header class="gallery__header">
@@ -270,7 +230,7 @@
         <br>
 
         <!-- Scripts -->
-        <script src="src/components/organisms/carousel/carousel.js"></script>
+        <script src="src/components/organisms/slider/slider.js"></script>
         <script src="src/components/organisms/gallery/gallery.js"></script>
         <script src="src/components/organisms/navbar/navbar.js"></script>
     </body>

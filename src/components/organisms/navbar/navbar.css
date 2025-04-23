@@ -8,15 +8,16 @@
     z-index: var(--z-modal);
     background-color: var(--color-white-30);
     backdrop-filter: blur(8px);
+
 }
 
 .navbar__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5rem;
+    padding: 1.5rem 2rem;
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin: 0;
 }
 
 /* Logo */
@@ -28,7 +29,7 @@
 .navbar__logo-text {
     color: var(--color-white);
     font-family: var(--font-tittle-400);
-    font-size: var(--font-size-24);
+    font-size: var(--font-size-32);
 }
 
 /* Menú de navegación */
@@ -51,12 +52,20 @@
     text-decoration: none;
     font-family: var(--font-text-400);
     font-size: var(--font-size-16);
+    font-weight: bold;
     transition: var(--transition-fast);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
 }
 
 .navbar__link:hover,
 .navbar__link--active {
-    color: var(--color-secundary);
+    color: var(--color-primary);
+    background-color: var(--color-white-50);
+    border: 1px solid var(--color-white);
+    box-shadow: 0 0 6px var(--color-white);
+    transition: var(--transition-fast);
 }
 
 /* Botón menú móvil */
@@ -163,6 +172,7 @@
     .navbar__container {
         display: flex;
         align-items: center;
+        margin: auto 5rem;
     }
 
     .navbar__menu {

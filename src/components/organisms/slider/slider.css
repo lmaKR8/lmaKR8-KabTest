@@ -1,0 +1,292 @@
+@import url(/src/css/root.css);
+
+.caption {
+    position: absolute;
+    max-width: 40rem;
+    top: 50%;
+    left: 8rem;
+    background: var(--gradient-w30-to-w05);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--color-white-30);
+    border-radius: 0.25rem;
+    padding: 2.5rem;
+    z-index: 9;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 500ms ease opacity, 500ms ease transform;
+    transform: translateY(60px);
+
+    &.current-caption {
+        transition-delay: 1000ms;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &.previous-caption {
+        transform: translateY(-60px);
+    }
+
+    .caption-heading {
+        transition: 500ms ease-in all;
+    }
+
+    
+    a.btn {
+        color: #333;
+        font-size: 0.8rem;
+        text-decoration: none;
+        background-color: white;
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        position: relative;
+        z-index: 9;
+        transition: 250ms ease-in background-color, 500ms ease-in color;
+        
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+        
+    }
+}
+
+.caption-heading h1 {
+    font-family: var(--font-tittle-400);
+    font-size: clamp(2rem, 8vw, var(--font-size-56));
+    margin-bottom: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+    color: white;
+}
+
+.caption-subhead {
+    font-family: var(--font-text-400);
+    font-size: clamp(1rem, 4vw, var(--font-size-24));
+    font-weight: 400;
+    color: var(--color-white);
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.left-col,
+.right-col {
+    box-sizing: border-box;
+    height: calc(100% - 4rem);
+    overflow: hidden;
+}
+
+.left-col {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+
+    .slide {
+        filter: grayscale(10%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-position: left top !important;
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: 1000ms cubic-bezier(1, 0.04, 0.355, 1) transform,
+            1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) clip-path;
+        transform: translateY(-100%);
+        scale: 1;
+        z-index: -1;
+
+        &.previous {
+            z-index: 1;
+            opacity: 1;
+            transform: translateY(0);
+            animation-delay: 1s;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            transition: 3s ease transform;
+            will-change: transform;
+
+            &.change {
+                transform: translateY(50%);
+            }
+        }
+
+        &.next {
+            transform: translateY(-100%);
+            z-index: 3;
+            opacity: 1;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        &.current {
+            opacity: 1;
+            transform: translateY(0) scale(1.25);
+            z-index: 2;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    }
+}
+
+.right-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-col .preview {
+    max-width: 400px;
+}
+
+.nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    overflow: hidden;
+
+    pointer-events:none;
+    a {
+        color: rgba(250, 250, 250, 1);
+        font-size: 3rem;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    &:hover {
+
+        .slide-up,
+        .slide-down {
+            opacity: 0.5;
+            transform: translateX(0);
+        }
+
+        /*.slide-up {}*/
+    }
+
+    .slide-up,
+    .slide-down {
+        display: block;
+        position: absolute;
+        width:100%;
+        text-align: center;
+        padding: 1rem;
+        opacity: 0;
+        transition: 0.25s ease opacity, 0.25s ease transform;
+        z-index: 99;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 300 !important;
+        }
+    }
+
+    .slide-up {
+        top: 50%;
+        left: 0;
+        transform: translateX(-100%);
+    }
+
+    .slide-down {
+        top: 50%;
+        right: 0;
+        transform: translateX(100%);
+    }
+}
+
+
+/* ==== Media Queries ==== */
+
+@media screen and (max-width: 768px) {
+    .caption {
+        left: 2rem;
+        right: 2rem;
+        max-width: calc(100% - 4rem);
+        padding: 1.5rem;
+    }
+
+    .caption-heading h1 {
+        margin-bottom: 1rem;
+    }
+
+    .caption-subhead {
+        margin-bottom: 1.5rem;
+    }
+
+    a.btn {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .nav {
+
+        .slide-up,
+        .slide-down {
+            padding: 0.5rem;
+
+            a {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .caption {
+        left: 1rem;
+        right: 1rem;
+        max-width: calc(100% - 2rem);
+        padding: 1rem;
+    }
+
+    .caption-heading h1 {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .caption-subhead {
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+        margin-bottom: 1rem;
+    }
+
+    a.btn {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.6rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .nav {
+
+        .slide-up,
+        .slide-down {
+            a {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .left-col .slide {
+        background-position: center center !important;
+    }
+}
