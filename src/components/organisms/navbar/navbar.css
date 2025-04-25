@@ -48,7 +48,7 @@
 }
 
 .navbar__link {
-    color: var(--color-white);
+    color: var(--color-primary-80);
     text-decoration: none;
     font-family: var(--font-text-400);
     font-size: var(--font-size-16);
@@ -59,13 +59,17 @@
     border-radius: 1rem;
 }
 
-.navbar__link:hover,
-.navbar__link--active {
+.navbar__link:hover {
     color: var(--color-primary);
     background-color: var(--color-white-50);
-    border: 1px solid var(--color-white);
-    box-shadow: 0 0 6px var(--color-white);
-    transition: var(--transition-fast);
+    border: 1px solid var(--color-white-30);
+    box-shadow: 0 0 6px var(--color-white-70);
+    transition: var(--transition-normal);
+}
+
+.navbar__link--active {
+    color: var(--color-primary);
+    transition: var(--transition-normal);
 }
 
 /* Botón menú móvil */
