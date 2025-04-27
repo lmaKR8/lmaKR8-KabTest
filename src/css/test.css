@@ -1,0 +1,100 @@
+@import url(root.css);
+@import url('styles.css');
+
+/* Estilos base (Mobile First) */
+.footer {
+    background: #f5f5f5;
+    padding: 2rem 1rem;
+    color: #333;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer__nav {
+    order: 2;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer__link {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer__link:focus,
+.footer__link:hover {
+    color: #000;
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.footer__text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+.footer__copy {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+/* Media Queries para escritorio */
+@media (min-width: 768px) {
+    .footer__container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer__logo {
+        text-align: left;
+        flex: 1 0 100%;
+    }
+
+    .footer__nav {
+        order: 0;
+        flex: 1;
+    }
+
+    .footer__list {
+        justify-content: flex-start;
+    }
+
+    .footer__text {
+        flex: 2 0 100%;
+        text-align: left;
+        max-width: 600px;
+    }
+
+    .footer__copy {
+        text-align: right;
+        flex: 1;
+    }
+}
