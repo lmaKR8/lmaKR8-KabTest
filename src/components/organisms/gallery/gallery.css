@@ -1,5 +1,4 @@
-/* Variables globales */
-@import url(/src/css/root.css);
+@import url(../../../css/root.css);
 
 /* Gallery Component */
 .gallery {

@@ -43,14 +43,50 @@
 
         <main>
             <!-- [BANNER] -->
-            <section class="banner">
-                <div class="banner__container">
-                    <img class="banner__image" src="src/components/organisms//.png"
-                        data-title="banner" alt="banner">
+            <section class="hero" id="inicio">
+                <div class="carousel" id="heroCarousel" role="region" aria-label="Galería destacada">
+                    <!-- Indicadores -->
+                    <div class="carousel__indicators" role="tablist" aria-label="Selectores de diapositiva">
+                        <button class="carousel__indicator carousel__indicator--active" role="tab"
+                            aria-label="Mostrar diapositiva 1" aria-selected="true" data-slide="0">
+                        </button>
+                        <button class="carousel__indicator" role="tab" aria-label="Mostrar diapositiva 2" aria-selected="false"
+                            data-slide="1">
+                        </button>
+                        <button class="carousel__indicator" role="tab" aria-label="Mostrar diapositiva 3" aria-selected="false"
+                            data-slide="2">
+                        </button>
+                    </div>
+
+                    <!-- Contenedor de slides -->
+                    <div class="carousel__track">
+                        <div class="carousel__slide carousel__slide--active" role="tabpanel" aria-label="Diapositiva 1">
+                            <img class="carousel__image"
+                                src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png"
+                                alt="Descripción de la imagen 1" loading="eager">
+                        </div>
+                        <div class="carousel__slide" role="tabpanel" aria-label="Diapositiva 2">
+                            <img class="carousel__image"
+                                src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png"
+                                alt="Descripción de la imagen 2" loading="lazy">
+                        </div>
+                        <div class="carousel__slide" role="tabpanel" aria-label="Diapositiva 3">
+                            <img class="carousel__image"
+                                src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png"
+                                alt="Descripción de la imagen 3" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Controles -->
+                    <button class="carousel__control carousel__control--prev" type="button" aria-label="Anterior">
+                        <span class="carousel__control-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel__control carousel__control--next" type="button" aria-label="Siguiente">
+                        <span class="carousel__control-icon" aria-hidden="true"></span>
+                    </button>
                 </div>
             </section>
 
-            
             <!-- [GALERIA] -->
             <section class="gallery">
                 <!-- Header y Filtros -->
@@ -210,8 +246,8 @@
         <br>
 
         <!-- Scripts -->
-        <script src="src/components/organisms/slider/slider.js"></script>
-        <script src="src/components/organisms/gallery/gallery.js"></script>
         <script src="src/components/organisms/navbar/navbar.js"></script>
+        <script src="src/components/organisms/carousel/carousel.js"></script>
+        <script src="src/components/organisms/gallery/gallery.js"></script>
     </body>
 </html>
