@@ -1,33 +1,29 @@
 @import url(root.css);
 
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
 body {
+    font-size: 100%;
+    list-style-type: none;
     background-color: var(--color-background);
 }
 
-.main {
-    position: relative;
-}
-
-main>section+section {
-    margin-top: var(--section-spacing);
-}
-
-.hero {
-    position: relative;
-    z-index: var(--z-carousel);
-}
-
-.wrapper,
-.other-content {
-    position: relative;
-    z-index: var(--z-content);
+ol, ul {
+    list-style: none;
 }
 
 
-/* Banner Styles */
+/* MOMENTANEO Banner Styles */
 .banner {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     margin-bottom: 0;
