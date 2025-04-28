@@ -22,10 +22,11 @@
 .gallery__title {
     margin-top: auto; /* Empuja el título hacia abajo */
     font-family: var(--font-tittle-400);
-    font-size: clamp(2.75rem, 5vw, var(--font-size-64));
+    font-size: clamp(3rem, 5vw, var(--font-size-64));
     color: var(--color-primary);
     font-weight: 400;
     text-align: center;
+    padding: 0.25rem 1rem;
 }
 
 .gallery__nav {
@@ -214,8 +215,8 @@
     }
 
     .gallery__title {
-        margin: 0;
-        /* Elimina el margen en desktop */
+        margin: 0; /* Elimina el margen en desktop */
+        padding: 0; /* Elimina el padding en desktop */
     }
 
     .gallery__nav {
