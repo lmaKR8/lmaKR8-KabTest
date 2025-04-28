@@ -48,27 +48,20 @@
 }
 
 .navbar__link {
-    color: var(--color-primary-80);
+    color: var(--color-primary);
     text-decoration: none;
     font-family: var(--font-text-400);
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-24);
     font-weight: bold;
     transition: var(--transition-fast);
     padding: 0.5rem 1rem;
-    border: 1px solid transparent;
-    border-radius: 1rem;
+    gap: 1rem;
 }
 
-.navbar__link:hover {
-    color: var(--color-primary);
-    background-color: var(--color-white-50);
+.navbar__link:hover :active {
+    color: var(--color-primary-80);
+    background-color: var(--color-white-40);
     border: 1px solid var(--color-white-30);
-    box-shadow: 0 0 6px var(--color-white-70);
-    transition: var(--transition-normal);
-}
-
-.navbar__link--active {
-    color: var(--color-primary);
     transition: var(--transition-normal);
 }
 
@@ -139,11 +132,11 @@
 
     .navbar__menu {
         position: fixed;
-        top: 4rem;
+        top: 4.67rem;
         right: 0;
         width: 100%;
         height: calc(100vh - 4rem);
-        background-color: var(--color-black-85);
+        background-color: var(--color-white-30);
         backdrop-filter: blur(8px);
         transform: translateX(100%);
         opacity: 0;
@@ -189,5 +182,30 @@
 
     .navbar__logo {
         flex: none;
+    }
+
+    .navbar__link {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-family: var(--font-text-400);
+        font-size: var(--font-size-16);
+        font-weight: bold;
+        transition: var(--transition-fast);
+        padding: 0.5rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 1rem;
+    }
+
+    .navbar__link:hover {
+        color: var(--color-primary-80);
+        background-color: var(--color-white-50);
+        border: 1px solid var(--color-white-30);
+        box-shadow: 0 0 6px var(--color-white-70);
+        transition: var(--transition-normal);
+    }
+
+    .navbar__link--active {
+        color: var(--color-primary);
+        transition: var(--transition-normal);
     }
 }
