@@ -130,13 +130,17 @@
         margin: 0;
     }
 
+    .navbar__link {
+        font-weight: 800;
+    }
+
     .navbar__menu {
         position: fixed;
         top: 4.67rem;
         right: 0;
         width: 100%;
         height: calc(100vh - 4rem);
-        background-color: var(--color-white-30);
+        background-color: var(--color-white-80);
         backdrop-filter: blur(8px);
         transform: translateX(100%);
         opacity: 0;

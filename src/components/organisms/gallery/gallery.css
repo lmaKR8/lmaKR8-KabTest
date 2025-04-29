@@ -22,7 +22,7 @@
 .gallery__title {
     margin-top: auto; /* Empuja el título hacia abajo */
     font-family: var(--font-tittle-400);
-    font-size: clamp(3rem, 5vw, var(--font-size-64));
+    font-size: clamp(var(--font-size-44), var(--font-size-52), var(--font-size-60));
     color: var(--color-primary);
     font-weight: 400;
     text-align: center;
