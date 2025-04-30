@@ -5,7 +5,6 @@
     padding: 2rem 1rem;
     background: var(--color-background);
     margin: 0;
-
 }
 
 /* Header */
@@ -16,20 +15,19 @@
     gap: 2rem;
     margin: 0;
     padding-bottom: 2rem;
-
 }
 
 .gallery__title {
-    margin-top: auto; /* Empuja el título hacia abajo */
+    order: 1;
+    text-align: center;
     font-family: var(--font-tittle-400);
     font-size: clamp(var(--font-size-44), var(--font-size-52), var(--font-size-60));
     color: var(--color-primary);
     font-weight: 400;
-    text-align: center;
-    padding: 0.25rem 1rem;
 }
 
 .gallery__nav {
+    order: 2;
     width: 100%;
 }
 
@@ -215,19 +213,21 @@
     }
 
     .gallery__title {
-        margin: 0; /* Elimina el margen en desktop */
-        padding: 0; /* Elimina el padding en desktop */
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        order: 2;
     }
 
     .gallery__nav {
         width: auto;
+        order: 1;
     }
 
     .gallery__filters {
         margin-top: 0;
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
-    
 
     .gallery__filter {
         width: auto;
