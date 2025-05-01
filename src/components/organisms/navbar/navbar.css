@@ -117,7 +117,7 @@
 /* Responsive */
 @media (max-width: 767px) {
     .navbar__container {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
     }
 
     .navbar__toggle {
@@ -188,11 +188,16 @@
         flex: none;
     }
 
+    .navbar__logo-text {
+        font-size: var(--font-size-44);
+        padding-right: 1rem;
+    }
+
     .navbar__link {
         color: var(--color-primary);
         text-decoration: none;
         font-family: var(--font-text-400);
-        font-size: var(--font-size-16);
+        font-size: var(--font-size-20);
         font-weight: bold;
         transition: var(--transition-fast);
         padding: 0.5rem 1rem;

@@ -158,15 +158,19 @@
 
     .footer__content {
         gap: 2rem;
+        padding-right: 7rem;
     }
 
     .footer__social {
         justify-content: flex-end;
         gap: 2rem;
-        padding-right: 1.5rem;    }
+        padding-right: 0.25rem;
+        margin-top: 0.5rem;
+    }
 
     .footer__copyright {
         grid-column: 1 / -1;
         text-align: center;
+        padding-top: 0;
     }
 }
