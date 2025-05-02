@@ -1,2 +1,115 @@
 @import url('../../../css/root.css');
 
+.about {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.about__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.about__parallax {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    will-change: transform;
+}
+
+.about__background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.about__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about__content {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+}
+
+.about__figure {
+    margin: 0 0 2rem 0;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.about__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about__text-container {
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+.about__text {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.about__text:last-child {
+    margin-bottom: 0;
+}
+
+/* Tablet (768px) */
+@media screen and (min-width: 48em) {
+    .about__content {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
+        align-items: center;
+        padding: 3rem;
+    }
+
+    .about__figure {
+        margin: 0;
+    }
+
+    .about__title {
+        text-align: left;
+    }
+}
+
+/* Desktop (1024px) */
+@media screen and (min-width: 64em) {
+    .about__container {
+        padding: 4rem 2rem;
+    }
+
+    .about__content {
+        padding: 4rem;
+        gap: 4rem;
+    }
+}

@@ -1,380 +1,408 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <meta name="author" content="KR.8">
-        <meta name="description" content="Web de Kab">
-        <meta name="keywords" content="arte, pintura, a lo gonzo, switch">
-        <link rel="stylesheet" href="src/css/main.css">
-        <title>KAB TEST</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="author" content="KR.8">
+    <meta name="description" content="Web de Kab">
+    <meta name="keywords" content="arte, pintura, a lo gonzo, switch">
+    <link rel="stylesheet" href="src/css/main.css">
+    <title>KAB TEST</title>
+</head>
 
-    <body>
-        <!-- [NAVBAR] -->
-        <header class="navbar">
-            <div class="navbar__container">
-                <!-- Menú de navegación (izquierda) -->
-                <nav class="navbar__menu" id="navbar-menu" aria-label="Menú principal">
-                    <ul class="navbar__list">
-                        <li class="navbar__item">
-                            <a href="#inicio" class="navbar__link navbar__link--active">INICIO</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#galeria" class="navbar__link">GALERIA</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#sobre-mi" class="navbar__link">SOBRE MI</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#contacto" class="navbar__link">CONTACTO</a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- Logo (derecha) -->
-                <a href="/" class="navbar__logo">
-                    <span class="navbar__logo-text">LOGO</span>
-                </a>
-                <!-- Botón de menú móvil -->
-                <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbar-menu">
-                    <span class="navbar__toggle-icon"></span>
+<body>
+    <!-- [NAVBAR] -->
+    <header class="navbar">
+        <div class="navbar__container">
+            <!-- Menú de navegación (izquierda) -->
+            <nav class="navbar__menu" id="navbar-menu" aria-label="Menú principal">
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a href="#inicio" class="navbar__link navbar__link--active">INICIO</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#galeria" class="navbar__link">GALERIA</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#sobre-mi" class="navbar__link">SOBRE MI</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#contacto" class="navbar__link">CONTACTO</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Logo (derecha) -->
+            <a href="/" class="navbar__logo">
+                <span class="navbar__logo-text">LOGO</span>
+            </a>
+            <!-- Botón de menú móvil -->
+            <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbar-menu">
+                <span class="navbar__toggle-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- [BANNER] -->
+        <section class="hero" id="inicio">
+            <div class="carousel" id="heroCarousel" role="region" aria-label="Galería destacada">
+                <!-- Indicadores -->
+                <div class="carousel__indicators" role="tablist" aria-label="Selectores de diapositiva">
+                    <button class="carousel__indicator carousel__indicator--active" role="tab"
+                        aria-label="Mostrar diapositiva 1" aria-selected="true" data-slide="0">
+                    </button>
+                    <button class="carousel__indicator" role="tab" aria-label="Mostrar diapositiva 2" aria-selected="false"
+                        data-slide="1">
+                    </button>
+                    <button class="carousel__indicator" role="tab" aria-label="Mostrar diapositiva 3" aria-selected="false"
+                        data-slide="2">
+                    </button>
+                </div>
+                <!-- Contenedor de slides -->
+                <div class="carousel__track">
+                    <div class="carousel__slide carousel__slide--active" role="tabpanel" aria-label="Diapositiva 1">
+                        <img class="carousel__image"
+                            src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png"
+                            alt="Descripción de la imagen 1" loading="eager">
+                    </div>
+                    <div class="carousel__slide" role="tabpanel" aria-label="Diapositiva 2">
+                        <img class="carousel__image"
+                            src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png"
+                            alt="Descripción de la imagen 2" loading="lazy">
+                    </div>
+                    <div class="carousel__slide" role="tabpanel" aria-label="Diapositiva 3">
+                        <img class="carousel__image"
+                            src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png"
+                            alt="Descripción de la imagen 3" loading="lazy">
+                    </div>
+                </div>
+                <!-- Controles -->
+                <button class="carousel__control carousel__control--prev" type="button" aria-label="Anterior">
+                    <span class="carousel__control-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel__control carousel__control--next" type="button" aria-label="Siguiente">
+                    <span class="carousel__control-icon" aria-hidden="true"></span>
                 </button>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <!-- [BANNER] -->
-            <section class="hero" id="inicio">
-                <div class="carousel" id="heroCarousel" role="region" aria-label="Galería destacada">
-                    <!-- Indicadores -->
-                    <div class="carousel__indicators" role="tablist" aria-label="Selectores de diapositiva">
-                        <button class="carousel__indicator carousel__indicator--active" role="tab"
-                            aria-label="Mostrar diapositiva 1" aria-selected="true" data-slide="0">
-                        </button>
-                        <button class="carousel__indicator" role="tab" aria-label="Mostrar diapositiva 2" aria-selected="false"
-                            data-slide="1">
-                        </button>
-                        <button class="carousel__indicator" role="tab" aria-label="Mostrar diapositiva 3" aria-selected="false"
-                            data-slide="2">
-                        </button>
+        <!-- [GALERIA] -->
+        <section class="gallery">
+            <!-- Header y Filtros -->
+            <header class="gallery__header">
+                <nav class="gallery__nav">
+                    <div class="gallery__filters">
+                        <button class="gallery__filter gallery__filter--active" data-filter="all">Todos</button>
+                        <button class="gallery__filter" data-filter="cuadros">Cuadros</button>
+                        <button class="gallery__filter" data-filter="chaquetas">Chaquetas</button>
+                        <button class="gallery__filter" data-filter="misc">Misc</button>
                     </div>
-                    <!-- Contenedor de slides -->
-                    <div class="carousel__track">
-                        <div class="carousel__slide carousel__slide--active" role="tabpanel" aria-label="Diapositiva 1">
-                            <img class="carousel__image"
-                                src="src/components/organisms/carousel/img/carousel-background-1_1440x900.png"
-                                alt="Descripción de la imagen 1" loading="eager">
-                        </div>
-                        <div class="carousel__slide" role="tabpanel" aria-label="Diapositiva 2">
-                            <img class="carousel__image"
-                                src="src/components/organisms/carousel/img/carousel-background-2_1440x900.png"
-                                alt="Descripción de la imagen 2" loading="lazy">
-                        </div>
-                        <div class="carousel__slide" role="tabpanel" aria-label="Diapositiva 3">
-                            <img class="carousel__image"
-                                src="src/components/organisms/carousel/img/carousel-background-3_1440x900.png"
-                                alt="Descripción de la imagen 3" loading="lazy">
-                        </div>
-                    </div>
-                    <!-- Controles -->
-                    <button class="carousel__control carousel__control--prev" type="button" aria-label="Anterior">
-                        <span class="carousel__control-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="carousel__control carousel__control--next" type="button" aria-label="Siguiente">
-                        <span class="carousel__control-icon" aria-hidden="true"></span>
-                    </button>
-                </div>
-            </section>
-
-
-            <!-- [GALERIA] -->
-            <section class="gallery">
-                <!-- Header y Filtros -->
-                <header class="gallery__header">
-                    <nav class="gallery__nav">
-                        <div class="gallery__filters">
-                            <button class="gallery__filter gallery__filter--active" data-filter="all">Todos</button>
-                            <button class="gallery__filter" data-filter="cuadros">Cuadros</button>
-                            <button class="gallery__filter" data-filter="chaquetas">Chaquetas</button>
-                            <button class="gallery__filter" data-filter="misc">Misc</button>
-                        </div>
-                    </nav>
-                    <h2 class="gallery__title">GALERIA</h2>
-                </header>
-            
-                <!-- Grid de imágenes -->
-                <div class="gallery__grid">
-                    <article class="gallery__item" data-category="chaquetas">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-1_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-                    
-                    <article class="gallery__item" data-category="cuadros">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-2_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="cuadros">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-3_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="misc">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-4_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="cuadros">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-5_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="chaquetas">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-6_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="cuadros">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-7_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="chaquetas">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-8_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="misc">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-9_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="chaquetas">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-10_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="misc">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-11_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-
-                    <article class="gallery__item" data-category="misc">
-                        <figure class="gallery__figure">
-                            <img class="gallery__image" 
-                                data-src="src/components/organisms/gallery/img/gallery-12_300x300.png"
-                                data-title="Nombre de la obra"
-                                alt="Nombre de la obra">
-                            <figcaption class="gallery__caption">Nombre de la obra</figcaption>
-                        </figure>
-                    </article>
-                </div>
-
-                <!-- Lightbox -->
-                <div class="gallery__lightbox">
-                    <button class="gallery__lightbox-close" aria-label="Cerrar">&times;</button>
-                    <button class="gallery__lightbox-prev" aria-label="Anterior">&lang;</button>
-                    <button class="gallery__lightbox-next" aria-label="Siguiente">&rang;</button>
-                    <div class="gallery__lightbox-content">
-                        <img class="gallery__lightbox-image" src="" alt="">
-                        <div class="gallery__lightbox-info">
-                            <h3 class="gallery__lightbox-title"></h3>
-                            <p class="gallery__lightbox-category"></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- [CONTACTO] -->
-            <section class="contact" id="contacto">
-                <div class="contact__background" role="presentation" aria-hidden="true">
-                    <img class="contact__background-image"
-                        src="src/components/organisms/contact/img/contact-background_1500x700.jpg" alt="" loading="eager">
-                </div>
-                <div class="contact__container">
-                    <!-- Información de contacto -->
-                    <div class="contact__info">
-                        <h2 class="contact__title">CONTACTO</h2>
-                        <p class="contact__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam magna sapien, ornare
-                            et dui a, facilisis ultrices ex. Ut faucibus cursus fringilla.</p>
-                        <div class="contact__social">
-                            <a href="https://instagram.com" class="contact__social-link" aria-label="Síguenos en Instagram"
-                                target="_blank" rel="noopener">
-                                <svg class="contact__social-icon" width="32" height="32" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                                </svg>
-                            </a>
-                            <a href="https://facebook.com" class="contact__social-link" aria-label="Síguenos en Facebook"
-                                target="_blank" rel="noopener">
-                                <svg class="contact__social-icon" width="32" height="32" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Formulario -->
-                    <form class="contact__form" id="contactForm" novalidate>
-                        <div class="contact__form-group">
-                            <label class="contact__label" for="name">Nombre</label>
-                            <input type="text" class="contact__input" id="name" name="name" placeholder="Nombre" required>
-                        </div>
-
-                        <div class="contact__form-row">
-                            <div class="contact__form-group">
-                                <label class="contact__label" for="phone">Fono</label>
-                                <input type="tel" class="contact__input" id="phone" name="phone" placeholder="Fono" required>
-                            </div>
-
-                            <div class="contact__form-group">
-                                <label class="contact__label" for="email">Mail</label>
-                                <input type="email" class="contact__input" id="email" name="email" placeholder="Mail" required>
-                            </div>
-                        </div>
-
-                        <div class="contact__form-group contact__form-group--full">
-                            <label class="contact__label" for="message">Mensaje</label>
-                            <textarea class="contact__input contact__input--textarea" id="message" name="message"
-                                placeholder="Mensaje" required></textarea>
-                        </div>
-
-                        <button type="submit" class="contact__submit">Enviar</button>
-                    </form>
-                </div>
-            </section>
-        </main>
-
-
-        <!-- [FOOTER] -->
-        <footer class="footer" role="contentinfo">
-            <div class="footer__container">
-                <!-- Logo -->
-                <div class="footer__brand">
-                    <a href="/" class="footer__logo" aria-label="Ir a inicio">
-                        <span class="footer__logo-text">LOGO</span>
-                    </a>
-                </div>
-                <!-- Navegación -->
-                <nav class="footer__nav" role="navigation" aria-label="Navegación del pie de página">
-                    <ul class="footer__menu">
-                        <li class="footer__menu-item">
-                            <a href="#inicio" class="footer__link">INICIO</a>
-                        </li>
-                        <li class="footer__menu-item">
-                            <a href="#galeria" class="footer__link">GALERÍA</a>
-                        </li>
-                        <li class="footer__menu-item">
-                            <a href="#sobre-mi" class="footer__link">SOBRE MI</a>
-                        </li>
-                        <li class="footer__menu-item">
-                            <a href="#noticias" class="footer__link">NOTICIAS</a>
-                        </li>
-                        <li class="footer__menu-item">
-                            <a href="#contacto" class="footer__link">CONTACTO</a>
-                        </li>
-                    </ul>
                 </nav>
-                <!-- Contenedor de información -->
-                <div class="footer__content">
-                    <!-- Información -->
-                    <div class="footer__info">
-                        <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut de identra labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat de ullamco qu rty ut det consectetur adipiscing elit.
-                        </p>
+                <h2 class="gallery__title">GALERIA</h2>
+            </header>
+        
+            <!-- Grid de imágenes -->
+            <div class="gallery__grid">
+                <article class="gallery__item" data-category="chaquetas">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-1_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                
+                <article class="gallery__item" data-category="cuadros">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-2_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="cuadros">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-3_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="misc">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-4_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="cuadros">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-5_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="chaquetas">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-6_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="cuadros">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-7_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="chaquetas">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-8_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="misc">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-9_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="chaquetas">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-10_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="misc">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-11_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+
+                <article class="gallery__item" data-category="misc">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" 
+                            data-src="src/components/organisms/gallery/img/gallery-12_300x300.png"
+                            data-title="Nombre de la obra"
+                            alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+            </div>
+
+            <!-- Lightbox -->
+            <div class="gallery__lightbox">
+                <button class="gallery__lightbox-close" aria-label="Cerrar">&times;</button>
+                <button class="gallery__lightbox-prev" aria-label="Anterior">&lang;</button>
+                <button class="gallery__lightbox-next" aria-label="Siguiente">&rang;</button>
+                <div class="gallery__lightbox-content">
+                    <img class="gallery__lightbox-image" src="" alt="">
+                    <div class="gallery__lightbox-info">
+                        <h3 class="gallery__lightbox-title"></h3>
+                        <p class="gallery__lightbox-category"></p>
                     </div>
-                    <!-- Redes Sociales -->
-                    <div class="footer__social">
-                        <p class="footer__social-text">SÍGUENOS</p>
-                        <div class="footer__social-links">
-                            <a href="https://instagram.com" class="footer__social-link" aria-label="Síguenos en Instagram"
-                                target="_blank" rel="noopener">
-                                <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                                </svg>
-                            </a>
-                            <a href="https://facebook.com" class="footer__social-link" aria-label="Síguenos en Facebook" target="_blank"
-                                rel="noopener">
-                                <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Copyright -->
-                <div class="footer__copyright">
-                    <p class="footer__copyright-text">© 2025 Kab Web - Desarrollo por DR Inc.</p>
                 </div>
             </div>
-        </footer>
+        </section>
+
+        <!-- [SOBRE MI] -->
+<section class="about" id="sobre-mi">
+    <div class="about__background" aria-hidden="true">
+        <div class="about__parallax">
+            <img class="about__background-image" src="src/components/organisms/about/img/about-background.png" alt=""
+                loading="lazy">
+        </div>
+    </div>
+
+    <div class="about__container">
+        <article class="about__content">
+            <figure class="about__figure">
+                <img class="about__image" src="src/components/organisms/about/img/artist-profile.jpg"
+                    alt="Retrato del artista">
+            </figure>
+
+            <div class="about__info">
+                <h2 class="about__title">SOBRE MI</h2>
+                <div class="about__text-container">
+                    <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris.</p>
+                    <p class="about__text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+        <!-- [CONTACTO] -->
+        <section class="contact" id="contacto">
+            <div class="contact__background" role="presentation" aria-hidden="true">
+                <img class="contact__background-image"
+                    src="src/components/organisms/contact/img/contact-background_1500x700.jpg" alt="" loading="eager">
+            </div>
+            <div class="contact__container">
+                <!-- Información de contacto -->
+                <div class="contact__info">
+                    <h2 class="contact__title">CONTACTO</h2>
+                    <p class="contact__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam magna sapien, ornare
+                        et dui a, facilisis ultrices ex. Ut faucibus cursus fringilla.</p>
+                    <div class="contact__social">
+                        <a href="https://instagram.com" class="contact__social-link" aria-label="Síguenos en Instagram"
+                            target="_blank" rel="noopener">
+                            <svg class="contact__social-icon" width="32" height="32" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com" class="contact__social-link" aria-label="Síguenos en Facebook"
+                            target="_blank" rel="noopener">
+                            <svg class="contact__social-icon" width="32" height="32" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <form class="contact__form" id="contactForm" novalidate>
+                    <div class="contact__form-group">
+                        <label class="contact__label" for="name">Nombre</label>
+                        <input type="text" class="contact__input" id="name" name="name" placeholder="Nombre" required>
+                    </div>
+
+                    <div class="contact__form-row">
+                        <div class="contact__form-group">
+                            <label class="contact__label" for="phone">Fono</label>
+                            <input type="tel" class="contact__input" id="phone" name="phone" placeholder="Fono" required>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label class="contact__label" for="email">Mail</label>
+                            <input type="email" class="contact__input" id="email" name="email" placeholder="Mail" required>
+                        </div>
+                    </div>
+
+                    <div class="contact__form-group contact__form-group--full">
+                        <label class="contact__label" for="message">Mensaje</label>
+                        <textarea class="contact__input contact__input--textarea" id="message" name="message"
+                            placeholder="Mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact__submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    
+    <!-- [FOOTER] -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <!-- Logo -->
+            <div class="footer__brand">
+                <a href="/" class="footer__logo" aria-label="Ir a inicio">
+                    <span class="footer__logo-text">LOGO</span>
+                </a>
+            </div>
+            <!-- Navegación -->
+            <nav class="footer__nav" role="navigation" aria-label="Navegación del pie de página">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item">
+                        <a href="#inicio" class="footer__link">INICIO</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#galeria" class="footer__link">GALERÍA</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#sobre-mi" class="footer__link">SOBRE MI</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#noticias" class="footer__link">NOTICIAS</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#contacto" class="footer__link">CONTACTO</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Contenedor de información -->
+            <div class="footer__content">
+                <!-- Información -->
+                <div class="footer__info">
+                    <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut de identra labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat de ullamco qu rty ut det consectetur adipiscing elit.
+                    </p>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="footer__social">
+                    <p class="footer__social-text">SÍGUENOS</p>
+                    <div class="footer__social-links">
+                        <a href="https://instagram.com" class="footer__social-link" aria-label="Síguenos en Instagram"
+                            target="_blank" rel="noopener">
+                            <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com" class="footer__social-link" aria-label="Síguenos en Facebook" target="_blank"
+                            rel="noopener">
+                            <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer__copyright">
+                <p class="footer__copyright-text">© 2025 Kab Web - Desarrollo por DR Inc.</p>
+            </div>
+        </div>
+    </footer>
 
 
-        <!-- Scripts -->
-        <script src="src/components/organisms/navbar/navbar.js"></script>
-        <script src="src/components/organisms/carousel/carousel.js"></script>
-        <script src="src/components/organisms/gallery/gallery.js"></script>
-        <script src="src/components/organisms/about/about.js"></script>
-        <script src="src/components/organisms/contact/contact.js"></script>
-        <script src="src/components//organisms/footer/footer.js"></script>
-    </body>
+    <!-- Scripts -->
+    <script src="src/components/organisms/navbar/navbar.js"></script>
+    <script src="src/components/organisms/carousel/carousel.js"></script>
+    <script src="src/components/organisms/gallery/gallery.js"></script>
+    <script src="src/components/organisms/about/about.js"></script>
+    <script src="src/components/organisms/contact/contact.js"></script>
+    <script src="src/components//organisms/footer/footer.js"></script>
+</body>
 </html>
