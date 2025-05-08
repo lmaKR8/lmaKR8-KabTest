@@ -1,0 +1,30 @@
+@import url(../../../css/root.css);
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura completa de la ventana */
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+.hero__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__video-mp4 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción y cubre todo el contenedor */
+    object-position:center; /* Centra el video */
+}
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* Altura reducida para móviles */
+    }
+}
