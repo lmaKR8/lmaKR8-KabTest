@@ -1,2 +1,52 @@
 @import url(../../../css/root.css);
 
+.category {
+    width: 95%;
+    display: flex;
+    padding: 0 4rem;
+    margin: 7.5rem 2.5rem;
+}
+
+.category__slide {
+    height: 80vh;
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+    color: var(--color-white);
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 500ms ease-in-out;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.category__slide--active {
+    flex: 10;
+}
+
+.category__tittle {
+    position: absolute;
+    letter-spacing: 2px;
+    text-align: left;
+    color: var(--color-white);
+    background-color: #1b1b22;
+    padding: 0.3em 3em 0.3em 1em;
+    font-size: 1em;
+    bottom: 20px;
+    left: 10px;
+    opacity: 0;
+}
+
+.category__slide.category__slide--active .category__tittle {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 768px) {
+    .category {
+        padding: 0;
+        margin: 5rem 0.75rem;
+    }
+}
