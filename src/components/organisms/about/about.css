@@ -7,7 +7,7 @@
         position: relative;
         min-height: 100vh;
         overflow: hidden;
-        margin: 7.5rem 0;
+        margin: 7rem 0;
     }
     
     .about__background {
@@ -58,9 +58,9 @@
     .about__content {
         display: grid;
         grid-template-columns: 1fr 2.55fr;
-        gap: 2rem;
+        gap: 2rem; 
         align-items: center;
-        padding: 2rem;
+        padding-left: 6rem;
     }
 
     .about__figure {
@@ -78,8 +78,9 @@
         object-fit: cover;
         display: block;
         opacity: 1;
-        transition: opacity 500ms ease;
-    }
+        border-radius: 25px;
+        transition: opacity 1000ms ease;
+    }   
     
     .about__info {
         background-color: transparent;

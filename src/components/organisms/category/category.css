@@ -1,10 +1,11 @@
 @import url(../../../css/root.css);
 
 .category {
-    width: 95%;
+    width: 100%;
     display: flex;
-    padding: 0 4rem;
-    margin: 7.5rem 2.5rem;
+    padding: 7.5rem 6rem;
+    margin: 0;
+    background-color: var(--color-secundary-20);
 }
 
 .category__slide {

@@ -47,12 +47,16 @@
     --color-primary-70: rgba(53, 56, 85, 0.7);
     --color-primary-50: rgba(53, 56, 85, 0.5);
     --color-primary-30: rgba(53, 56, 85, 0.3);
+    --color-primary-20: rgba(53, 56, 85, 0.2);
+    --color-primary-10: rgba(53, 56, 85, 0.1);
 
     --color-secundary: #727488;
     --color-secundary-90: rgba(114, 116, 136, 0.9);
     --color-secundary-70: rgba(114, 116, 136, 0.7);
     --color-secundary-50: rgba(114, 116, 136, 0.5);
     --color-secundary-30: rgba(114, 116, 136, 0.3);
+    --color-secundary-20: rgba(114, 116, 136, 0.2);
+    --color-secundary-10: rgba(114, 116, 136, 0.1);
 
     --color-tertiary: #222437;
     
