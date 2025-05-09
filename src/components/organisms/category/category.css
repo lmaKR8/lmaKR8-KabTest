@@ -2,10 +2,27 @@
 
 .category {
     width: 100%;
-    display: flex;
-    padding: 7.5rem 6rem;
+    position: relative;
+    padding: 5rem 6rem;
     margin: 0;
     background-color: var(--color-secundary-20);
+    display: flex;
+    flex-direction: column;
+}
+
+.category__title {
+    align-self: flex-end;
+    margin-bottom: 2rem;
+    font-family: var(--font-tittle-400);    
+    font-size: var(--font-size-72);
+    color: var(--color-primary);
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.category__slides-container {
+    display: flex;
+    width: 100%;
 }
 
 .category__slide {

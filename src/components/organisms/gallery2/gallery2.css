@@ -1,0 +1,21 @@
+@import url(../../../css/root.css);
+
+.mansory-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.mansory-gallery .column {
+    flex: 25%;
+}
+
+.mansory-gallery .column img {
+    border: 0.5rem solid #fff;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}

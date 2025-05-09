@@ -2,7 +2,7 @@
 
 /* Gallery Component */
 .gallery {
-    padding: 2rem 0;
+    padding: 0;
     background: var(--color-background);
     margin: 0;
 }
@@ -11,19 +11,9 @@
 .gallery__header {
     display: flex;
     flex-direction: column;
-    min-height: 200px;
     gap: 2rem;
     margin: 0;
     padding-bottom: 2rem; 
-}
-
-.gallery__title {
-    order: 1;
-    text-align: center;
-    font-family: var(--font-tittle-400);
-    font-size: clamp(var(--font-size-44), var(--font-size-64), var(--font-size-72));
-    color: var(--color-primary);
-    font-weight: 400;
 }
 
 .gallery__nav {

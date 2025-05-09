@@ -90,11 +90,12 @@
 
     .about__title {
         font-family: var(--font-tittle-400);
-        font-size: clamp(var(--font-size-44), var(--font-size-64), var(--font-size-72));
+        font-size: var(--font-size-72);
         color: var(--color-primary);
         font-weight: 400;
         text-align: left;
         margin-bottom: 3rem;
+        letter-spacing: 3px;
     }
 
     .about__text-container {
