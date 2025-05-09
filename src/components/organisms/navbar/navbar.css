@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     z-index: var(--z-modal);
-    background-color: var(--color-white-01); 
+    background-color: transparent; 
     box-shadow: none;
     transition: var(--transition-slow);
 }
@@ -189,7 +189,7 @@
         display: flex;
         align-items: center;
         margin: auto 5rem;
-        padding: 2rem 0;
+        padding: 2.25rem 0;
         transition: all var(--transition-slow);
     }
 
@@ -222,15 +222,39 @@
         border: 1px solid transparent;
         border-radius: 1rem;
         transition: all var(--transition-normal);
-        transform: translateY(0); /* Posición inicial */
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .navbar__link::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background-color: var(--color-white-50);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: width 600ms ease, height 600ms ease;
+        z-index: -1;   
     }
 
     .navbar__link:hover {
-        color: var(--color-tertiary);
-        background-color: var(--color-white-50);
-        border: 1px solid var(--color-white-30);
-        box-shadow: 0 4px 8px var(--color-white-30);
-        transform: translateY(-5px); /* Efecto de elevación */
+        color: var(--color-primary);
+        font-weight: bold;
+        transform: translateY(-2px);
+        text-shadow: none;
+    }
+
+    .navbar__link:hover::before {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .navbar__link:active {
+        transform: translateY(0);   
     }
 
     .navbar--scrolled .navbar__container {
@@ -245,15 +269,30 @@
         font-size: var(--font-size-22);
         text-shadow: none;
         letter-spacing: 0px; /* Añadido para eliminar el espaciado */
-        transition: all var(--transition-slow);   
-    }
-    .navbar--scrolled .navbar__link:hover {
-        background-color: var(--color-white-30);
-        border: 1px solid var(--color-white-50);
+        transition: all var(--transition-slow);
+        overflow: initial; /* Elimina el overflow hidden */
     }
 
-    .navbar__link--active {
-        color: var(--color-white-90);
-        transition: var(--transition-slow);
+    .navbar--scrolled .navbar__link::before {
+        background-color: var(--color-primary-50);
+        border-radius: 25px;
+        transition: width 500ms ease, height 500ms ease;
+    }
+
+    .navbar--scrolled .navbar__link:hover {
+        color: var(--color-white);
+        transform: translateY(-2px);
+        transition: all var(--transition-slow);
+    }
+
+        .navbar--scrolled .navbar__link:hover::before {
+        width: 150px;
+        height: 50px;
+    }
+
+    .navbar--scrolled .navbar__link--active {
+        color: var(--color-tertiary);
+        font-weight: bold;
+        transition: all var(--transition-slow);
     }
 }   
