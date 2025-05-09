@@ -6,14 +6,15 @@
     left: 0;
     width: 100%;
     z-index: var(--z-modal);
-    background-color: transparent;
-    transition: all 0.3s ease;
+    background-color: var(--color-white-01); 
+    box-shadow: none;
+    transition: var(--transition-very-slow);
 }
 
 .navbar--scrolled {
     background-color: var(--color-white-30);
     backdrop-filter: blur(8px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .navbar__container {
@@ -57,24 +58,25 @@
     text-decoration: none;
     font-family: var(--font-text-400);
     font-size: var(--font-size-24);
-    font-weight: bold;
-    transition: var(--transition-fast);
+    font-weight: 600;
+    transition: var(--transition-slow);
     padding: 0.5rem 1rem;
     gap: 1rem;
-    text-shadow: 0 2px 6px var(--color-white-70);
+    text-shadow: var(--shadow-lg-w);
 }
 
 .navbar__link:hover :active {
     color: var(--color-tertiary);
     background-color: var(--color-white-40);
     border: 1px solid var(--color-white-30);
-    transition: var(--transition-normal);
+    transition: var(--transition-slow);
     text-shadow: none;
-}
+}   
 
 .navbar--scrolled .navbar__link {
     text-shadow: none;
-    transition: var(--transition-normal);
+    font-weight: 600;
+    transition: var(--transition-slow);
 }
 
 /* Botón menú móvil */
@@ -92,7 +94,7 @@
     width: 24px;
     height: 2px;
     background-color: var(--color-white);
-    transition: var(--transition-normal);
+    transition: var(--transition-slow);
 }
 
 .navbar__toggle-icon::before,
@@ -102,7 +104,7 @@
     width: 24px;
     height: 2px;
     background-color: var(--color-white);
-    transition: var(--transition-normal);
+    transition: var(--transition-slow);
 }
 
 .navbar__toggle-icon::before {
@@ -157,7 +159,7 @@
         transform: translateX(100%);
         opacity: 0;
         visibility: hidden;
-        transition: var(--transition-normal);
+        transition: var(--transition-slow);
         margin: 0;
         order: 1;
     }
@@ -210,12 +212,13 @@
         text-decoration: none;
         font-family: var(--font-text-400);
         font-size: var(--font-size-22);
-        font-weight: bold;
-        transition: var(--transition-fast);
+        font-weight: 600;
+        letter-spacing: 3px;
+        transition: all var(--transition-slow); /* Cambiado para incluir todas las propiedades */
         padding: 0.5rem 1rem;
         border: 1px solid transparent;
         border-radius: 1rem;
-        text-shadow: 0 2px 10px var(--color-white-50);
+        text-shadow: var(--shadow-lg);
     }
 
     .navbar__link:hover {
@@ -223,12 +226,17 @@
         background-color: var(--color-white-50);
         border: 1px solid var(--color-white-30);
         box-shadow: 0 0 6px var(--color-white-70);
-        transition: var(--transition-normal);
+        transition: var(--transition-slow);
         text-shadow:none;
     }
 
+    .navbar--scrolled .navbar__link {
+        text-shadow: none;
+        letter-spacing: 0px; /* Añadido para eliminar el espaciado */
+        transition: all var(--transition-slow);   }
+
     .navbar__link--active {
         color: var(--color-primary);
-        transition: var(--transition-normal);
+        transition: var(--transition-slow);
     }
 }

@@ -68,6 +68,8 @@
     --color-white-20: rgba(219, 219, 225, 0.2);
     --color-white-10: rgba(219, 219, 225, 0.1);
     --color-white-05: rgba(219, 219, 225, 0.05);
+    --color-white-03: rgba(219, 219, 225, 0.03);
+    --color-white-01: rgba(219, 219, 225, 0.01);
     
     --color-black: #000000;
     --color-black-90: rgba(0, 0, 0, 0.9);
@@ -91,13 +93,18 @@
     /* Sombras */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);   /* Sombra pequeña */
     --shadow-md: 0 4px 6px 0 rgba(0, 0, 0, 0.15);    /* Sombra media */
-    --shadow-lg: 0 4px 25px 0 rgba(0, 0, 0, 0.25);  /* Sombra grande */
+    --shadow-lg: 0 4px 25px 0 rgba(0, 0, 0, 0.25);  /* Sombra grande */ 
+    
+    --shadow-sm-w: 0 1px 2px 0 rgb(255, 255, 255);   /* Sombra blanca */
+    --shadow-md-w: 0 4px 6px 0 rgb(255, 255, 255);   /* Sombra blanca */
+    --shadow-lg-w: 0 4px 25px 0 rgb(255, 255, 255); /* Sombra blanca */
 
 
     /* Transiciones */
     --transition-fast: 150ms ease-in-out;           /* Transición rápida */
     --transition-normal: 300ms ease-in-out;         /* Transición normal */
     --transition-slow: 500ms ease-in-out;           /* Transición lenta */
+    --transition-very-slow: all 1000ms ease;        /* Transición muy lenta */
 
 
     /* z-index */
