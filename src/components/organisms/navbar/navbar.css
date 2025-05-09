@@ -217,7 +217,7 @@
         padding: 0.5rem 1rem;
         border: 1px solid transparent;
         border-radius: 1rem;
-        transition: all var(--transition-slow);
+        transition: all var(--transition-normal);
         transform: translateY(0); /* Posición inicial */
     }
 
