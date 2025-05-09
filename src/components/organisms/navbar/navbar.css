@@ -211,7 +211,7 @@
         color: var(--color-primary);
         text-decoration: none;
         font-family: var(--font-text-400);
-        font-size: var(--font-size-22);
+        font-size: var(--font-size-24);
         font-weight: 700;
         letter-spacing: 3px;
         padding: 0.5rem 1rem;
@@ -231,6 +231,7 @@
     }
 
     .navbar--scrolled .navbar__link {
+        font-size: var(--font-size-22);
         text-shadow: none;
         letter-spacing: 0px; /* Añadido para eliminar el espaciado */
         transition: all var(--transition-slow);   
