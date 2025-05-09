@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     z-index: var(--z-modal);
-    background-color: var(--color-white-01); 
+    background-color: var(--color-white-02); 
     box-shadow: none;
     transition: var(--transition-very-slow);
 }
@@ -212,13 +212,12 @@
         text-decoration: none;
         font-family: var(--font-text-400);
         font-size: var(--font-size-22);
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 3px;
         transition: all var(--transition-slow); /* Cambiado para incluir todas las propiedades */
         padding: 0.5rem 1rem;
         border: 1px solid transparent;
         border-radius: 1rem;
-        text-shadow: var(--shadow-lg);
     }
 
     .navbar__link:hover {
