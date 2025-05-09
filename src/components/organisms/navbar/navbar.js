@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.navbar__menu');
     const links = document.querySelectorAll('.navbar__link');
     const navbar = document.querySelector('.navbar');
-    const scrollThreshold = 50;
+    const scrollThreshold = 100;
 
     // Manejo del scroll para el navbar y las secciones
     window.addEventListener('scroll', () => {

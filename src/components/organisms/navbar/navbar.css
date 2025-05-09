@@ -6,9 +6,9 @@
     left: 0;
     width: 100%;
     z-index: var(--z-modal);
-    background-color: var(--color-white-02); 
+    background-color: var(--color-white-01); 
     box-shadow: none;
-    transition: var(--transition-very-slow);
+    transition: var(--transition-slow);
 }
 
 .navbar--scrolled {
@@ -24,6 +24,7 @@
     padding: 1rem 2rem;
     max-width: var(--max-width);
     margin: 0;
+    transition: all var(--transition-slow);
 }
 
 /* Logo */
@@ -35,7 +36,7 @@
 .navbar__logo-text {
     color: var(--color-white);
     font-family: var(--font-tittle-400);
-    font-size: var(--font-size-32);
+    transition: var(--transition-slow);
 }
 
 /* Menú de navegación */
@@ -188,6 +189,8 @@
         display: flex;
         align-items: center;
         margin: auto 5rem;
+        padding: 2rem 0;
+        transition: all var(--transition-slow);
     }
 
     .navbar__menu {
@@ -203,15 +206,16 @@
     }
 
     .navbar__logo-text {
-        font-size: var(--font-size-44);
+        font-size: var(--font-size-52);
         padding-right: 1rem;
+        transition: var(--transition-normal);
     }
 
     .navbar__link {
         color: var(--color-primary);
         text-decoration: none;
         font-family: var(--font-text-400);
-        font-size: var(--font-size-24);
+        font-size: var(--font-size-26);
         font-weight: 500;
         letter-spacing: 3px;
         padding: 0.5rem 1rem;
@@ -229,6 +233,14 @@
         transform: translateY(-5px); /* Efecto de elevación */
     }
 
+    .navbar--scrolled .navbar__container {
+        padding: 0.5rem 0; /* Padding reducido al hacer scroll */
+    }
+
+    .navbar--scrolled .navbar__logo-text {
+        font-size: var(--font-size-40); /* Tamaño reducido al hacer scroll */   
+    }
+    
     .navbar--scrolled .navbar__link {
         font-size: var(--font-size-22);
         text-shadow: none;
