@@ -214,28 +214,36 @@
         font-size: var(--font-size-22);
         font-weight: 700;
         letter-spacing: 3px;
-        transition: all var(--transition-slow); /* Cambiado para incluir todas las propiedades */
         padding: 0.5rem 1rem;
         border: 1px solid transparent;
         border-radius: 1rem;
+        transition: all var(--transition-slow);
+        transform: translateY(0); /* Posición inicial */
     }
 
     .navbar__link:hover {
         color: var(--color-tertiary);
         background-color: var(--color-white-50);
         border: 1px solid var(--color-white-30);
-        box-shadow: 0 0 6px var(--color-white-70);
-        transition: var(--transition-slow);
-        text-shadow:none;
+        box-shadow: 0 4px 8px var(--color-white-30);
+        transform: translateY(-5px); /* Efecto de elevación */
+
     }
 
     .navbar--scrolled .navbar__link {
         text-shadow: none;
         letter-spacing: 0px; /* Añadido para eliminar el espaciado */
-        transition: all var(--transition-slow);   }
+        transition: all var(--transition-slow);   
+    }
+    .navbar--scrolled .navbar__link:hover {
+        background-color: var(--color-white-30);
+        border: 1px solid var(--color-white-50);
+    }
 
     .navbar__link--active {
-        color: var(--color-primary);
+        color: var(--color-white-90);
         transition: var(--transition-slow);
+        text-shadow: var(--shadow-lg);
+        font-weight: bold;
     }
-}
+}   
