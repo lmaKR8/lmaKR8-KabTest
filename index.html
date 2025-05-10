@@ -93,7 +93,6 @@
 
         <!-- [CATEGORIAS] -->
         <section class="category" id="galeria">
-            <h2 class="category__title">GALERIA</h2>
             <div class="category__slides-container">
                 <div class="category__slide category__slide--active"
                     style="background-image: url('src/components/organisms/category/img/category-digital.jpg');">
@@ -113,7 +112,19 @@
 
 
         <!-- [GALERIA 2] -->
-        <section>
+        <section class="gallery2">
+            <!-- Header y Filtros -->
+            <header class="gallery__header">
+                <nav class="gallery__nav">
+                    <div class="gallery__filters">
+                        <button class="gallery__filter gallery__filter--active" data-filter="all">Todos</button>
+                        <button class="gallery__filter" data-filter="cuadros">Cuadros</button>
+                        <button class="gallery__filter" data-filter="chaquetas">Chaquetas</button>
+                        <button class="gallery__filter" data-filter="misc">Misc</button>
+                    </div>
+                </nav>   
+                <h2 class="gallery2__title">GALERIA</h2>
+            </header>
             <div class="mansory-gallery">
                 <div class="column">
                     <img src="src/components/organisms/gallery2/img/1.jpg">

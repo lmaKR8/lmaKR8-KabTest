@@ -5,6 +5,7 @@
     width: 100%;
     height: 100vh; /* Altura completa de la ventana */
     overflow: hidden; /* Evita que el contenido se desborde */
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .hero__video {
@@ -32,16 +33,4 @@
 .hero__video-mp4--next {
     opacity: 0;
     z-index: 1;
-}
-
-/* Estilos responsivos para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .hero {
-        height: 70vh; /* Altura reducida para móviles */
-    }
-
-    .hero__video-mp4 {
-
-        height: 100%;
-    }
 }

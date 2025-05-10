@@ -1,5 +1,79 @@
 @import url(../../../css/root.css);
 
+.gallery2 {
+    width: 100%;
+    position: relative;
+    padding: 0 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.gallery__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+.gallery__nav {
+    order: 2;
+    width: 100%;
+}
+
+/* Filtros */
+.gallery__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0;
+    padding: 0 1rem;
+    max-width: 100%;
+}
+
+.gallery__filter {
+    width: auto;
+    min-width: min-content;
+    height: 3rem;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    background: var(--color-secundary);
+    color: var(--color-white);
+    font-family: var(--font-text-400);
+    font-weight: 400;
+    font-size: var(--font-size-14);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    white-space: nowrap;
+}
+
+.gallery__filter--active,
+.gallery__filter:hover {
+    background: var(--color-primary);
+}
+
+
+
+
+
+.gallery2__title {
+    align-self: flex-end;
+    font-family: var(--font-tittle-400);
+    font-size: var(--font-size-72);
+    color: var(--color-primary);
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+
+
 .mansory-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -19,7 +93,7 @@
     display: block;
     width: 100%;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 /* Efecto hover */
