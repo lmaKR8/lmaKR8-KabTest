@@ -51,10 +51,3 @@
     opacity: 1;
     transition: opacity 0.3s ease-in 0.4s;
 }
-
-@media (max-width: 768px) {
-    .category {
-        padding: 0;
-        margin: 5rem 0.75rem;
-    }
-}

@@ -123,7 +123,24 @@
 
     /* Espaciado */
     --section-spacing: 2rem; /* Variable para controlar el espaciado */
+
+
+    /* About específicas */
+        --about-min-height: 100vh;
+        --about-margin: 5rem 0 2rem 0;
+        --about-container-max-width: 1200px;
+        --about-container-padding: 2rem;
+        --about-parallax-transition: transform 900ms ease-out;
+        --about-content-opacity-transition: opacity 1000ms ease-out;
+        --about-content-transform-transition: transform 1000ms ease-out;
+        --about-image-border-radius: 25px;
+        --about-text-columns: 2;
+        --about-text-column-gap: 2rem;
+        --about-text-column-width: 19rem;
+        --about-text-line-height: 1.75;
+        
 }
+
 
 
 /* 

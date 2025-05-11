@@ -12,10 +12,10 @@
 
 <body>
     <!-- [NAVBAR] -->
-    <header class="navbar">
+    <header class="navbar" role="banner">
         <div class="navbar__container">
             <!-- Menú de navegación (izquierda) -->
-            <nav class="navbar__menu" id="navbar-menu" aria-label="Menú principal">
+            <nav class="navbar__menu" id="navbar-menu" role="navigation" aria-label="Menú principal">
                 <ul class="navbar__list">
                     <li class="navbar__item">
                         <a href="#inicio" class="navbar__link navbar__link--active">INICIO</a>
@@ -65,15 +65,18 @@
         <section class="about" id="sobre-mi">
             <div class="about__background" aria-hidden="true">
                 <div class="about__parallax">
-                    <img class="about__background-image" src="src/components/organisms/about/img/about-background.png" alt=""
-                        loading="lazy">
+                    <img class="about__background-image" 
+                        src="src/components/organisms/about/img/about-background.png" 
+                        alt=""loading="lazy">
                 </div>
             </div>
         
             <div class="about__container">
                 <article class="about__content">
                     <figure class="about__figure">
-                        <img class="about__image" src="src/components/organisms/about/img/about-perfil-1.jpg" alt="Retrato del artista">
+                        <img class="about__image" 
+                        src="src/components/organisms/about/img/about-perfil-1.jpg" 
+                        alt="Retrato del artista">
                     </figure>
         
                     <div class="about__info">
@@ -89,7 +92,7 @@
                     </div>
                 </article>
             </div>
-            </section>
+        </section>
 
         <!-- [CATEGORIAS] -->
         <section class="category" id="galeria">
