@@ -44,7 +44,7 @@
     align-items: center;
     opacity: 0;
     transform: translateY(50px);
-    transition: 
+    transition:
         var(--about-content-opacity-transition),
         var(--about-content-transform-transition);
 }
