@@ -158,6 +158,12 @@
     --about-signature-margin: 2rem;
     --about-signature-delay: calc(var(--about-fade-delay) * 7);
     --about-signature-duration: 1200ms;
+
+    /* About shadows */
+    --about-image-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3),
+        0 20px 60px -30px rgba(0, 0, 0, 0.5);
+    --about-image-hover-shadow: 0 15px 40px -20px rgba(0, 0, 0, 0.4),
+        0 30px 80px -40px rgba(0, 0, 0, 0.6);
 }
 
 
