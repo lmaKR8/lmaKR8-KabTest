@@ -38,7 +38,7 @@
     width: 100%;
     max-width: var(--about-container-max-width);
     margin: 0 auto;
-    padding: var(--about-container-padding);
+    padding: var(--about-container-padding) 0;
     min-height: var(--about-min-height);
     display: flex;
     align-items: center;
@@ -62,6 +62,7 @@
 .about__content {
     display: grid;
     grid-template-columns: 1fr 2.25fr;
+    position: relative;
     gap: 2rem;
     align-items: center;
     margin-left: 3rem;
@@ -82,7 +83,7 @@
 }
 
 /* Imagen */
-.about__figure {
+.about__profile {
     margin: 0;
     width: 100%;
     aspect-ratio: 1;
@@ -97,14 +98,14 @@
         filter var(--about-fade-duration) var(--about-fade-timing);
 }
 
-.about__container.visible .about__figure {
+.about__container.visible .about__profile {
     opacity: 1;
     transform: var(--about-slide-right) scale(1);
     filter: blur(0);
     transition-delay: calc(var(--about-fade-delay) * 2);
 }
 
-.about__image {
+.about__profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -139,7 +140,7 @@
     color: var(--color-primary);
     font-weight: 400;
     text-align: left;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     letter-spacing: 3px;
     opacity: 0;
     transform: var(--about-slide-left) scale(var(--about-initial-scale));
@@ -163,7 +164,7 @@
     column-gap: var(--about-text-column-gap);
     column-width: var(--about-text-column-width);
     max-width: 60rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .about__text {
@@ -191,6 +192,39 @@
     margin-bottom: 0;
 }
 
+/* Firma */
+.about__signature {
+    position: absolute;
+    bottom: var(--about-signature-margin);
+    right: 0;
+    width: var(--about-signature-width);
+    margin: 0;
+    opacity: 0;
+    transform: var(--about-slide-left) scale(var(--about-initial-scale));
+    filter: blur(var(--about-initial-blur));
+    transition:
+        opacity var(--about-signature-duration) var(--about-fade-timing),
+        transform var(--about-signature-duration) var(--about-slide-timing),
+        filter var(--about-fade-duration) var(--about-fade-timing);
+    will-change: transform, opacity, filter;
+    z-index: var(--z-content);
+}
+
+.about__container.visible .about__signature {
+    opacity: 1;
+    transform: var(--about-slide-right) scale(1);
+    filter: blur(0);
+    transition-delay: var(--about-signature-delay);
+}
+
+.about__signature-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 7rem;
+}
+
+
 /* Media queries para responsive */
 @media (max-width: 768px) {
     .about__content {
@@ -211,5 +245,13 @@
     .about__title {
         font-size: var(--font-size-48);
         text-align: center;
+    }
+
+    .about__signature {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: 150px;
+        margin: 2rem auto 0;
     }
 }
