@@ -188,7 +188,7 @@
     .navbar__container {
         display: flex;
         align-items: center;
-        margin: auto 5rem;
+        margin: auto 6rem;
         padding: 2.25rem 0;
         transition: all var(--transition-slow);
     }
