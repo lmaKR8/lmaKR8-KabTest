@@ -1,6 +1,6 @@
 @import url(../../../css/root.css);
 
-.gallery2 {
+.gallery {
     width: 100%;
     position: relative;
     padding: 0 1rem;
@@ -12,15 +12,19 @@
 /* Header */
 .gallery__header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 2rem;
     margin: 0;
-    padding-bottom: 2rem;
+    padding: 0 6rem 1rem 6rem;
 }
 
 .gallery__nav {
-    order: 2;
-    width: 100%;
+    order: 1;
+    /* Asegura que esté a la izquierda */
+    width: auto;
+    /* Cambiado de 100% a auto */
 }
 
 /* Filtros */
@@ -28,11 +32,23 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Alineado a la izquierda */
     gap: 0.5rem;
-    margin-top: 0;
-    padding: 0 1rem;
-    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery__title {
+    order: 2;
+    /* Asegura que esté a la derecha */
+    margin: 0;
+    /* Elimina márgenes por defecto */
+    font-family: var(--font-tittle-400);
+    font-size: var(--font-size-72);
+    color: var(--color-primary);
+    font-weight: 400;
+    letter-spacing: 3px;
 }
 
 .gallery__filter {
@@ -59,11 +75,7 @@
     background: var(--color-primary);
 }
 
-
-
-
-
-.gallery2__title {
+.gallery__title {
     align-self: flex-end;
     font-family: var(--font-tittle-400);
     font-size: var(--font-size-72);
@@ -77,8 +89,8 @@
 .mansory-gallery {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 5rem;
-    padding: 1rem;
+    margin: 0 5rem 5rem 5rem;
+    padding: 1rem 0.5rem;
     position: relative;
 }
 
