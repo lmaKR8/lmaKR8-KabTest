@@ -4,7 +4,7 @@
 .about {
     position: relative;
     min-height: var(--about-min-height);
-    margin: var(--about-margin);
+    margin: 3rem 0;
     overflow: hidden;
 }
 
@@ -38,7 +38,7 @@
     width: 100%;
     max-width: var(--about-container-max-width);
     margin: 0 auto;
-    padding: var(--about-container-padding) 0;
+    padding: 3rem 0 2rem 0;
     min-height: var(--about-min-height);
     display: flex;
     align-items: center;

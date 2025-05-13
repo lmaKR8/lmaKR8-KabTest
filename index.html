@@ -21,10 +21,10 @@
                         <a href="#inicio" class="navbar__link navbar__link--active">INICIO</a>
                     </li>
                     <li class="navbar__item">
-                        <a href="#sobre-mi" class="navbar__link">SOBRE MI</a>
+                        <a href="#galeria" class="navbar__link">GALERIA</a>
                     </li>
                     <li class="navbar__item">
-                        <a href="#galeria" class="navbar__link">GALERIA</a>
+                        <a href="#sobre-mi" class="navbar__link">SOBRE MI</a>
                     </li>
                     <li class="navbar__item">
                         <a href="#contacto" class="navbar__link">CONTACTO</a>
@@ -58,44 +58,6 @@
                     src="src/components/organisms/hero/video/banner-video-3_1920_1080_24fps.mp4" 
                     muted>
                 </video>
-            </div>
-        </section>
-
-        <!-- [SOBRE MI] -->
-        <section class="about" id="sobre-mi">
-            <div class="about__background" aria-hidden="true">
-                <div class="about__parallax">
-                    <img class="about__background-image" 
-                        src="src/components/organisms/about/img/about-background.png" 
-                        alt="" loading="lazy">
-                </div>
-            </div>
-        
-            <div class="about__container">
-                <article class="about__content">
-                    <figure class="about__profile">
-                        <img class="about__profile-img" 
-                            src="src/components/organisms/about/img/about-perfil-1.jpg" 
-                            alt="Retrato del artista">
-                    </figure>
-        
-                    <div class="about__info">
-                        <h2 class="about__title">SOBRE MI</h2>
-                        <div class="about__text-container">
-                            <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-                <figure class="about__signature">
-                    <img class="about__signature-img" src="src/components/organisms/about/img/about-signature.png" alt="Firma del artista">
-                </figure>
             </div>
         </section>
 
@@ -142,9 +104,10 @@
                 <nav class="gallery__nav">
                     <div class="gallery__filters">
                         <button class="gallery__filter gallery__filter--active" data-filter="all">Todos</button>
-                        <button class="gallery__filter" data-filter="cuadros">Cuadros</button>
-                        <button class="gallery__filter" data-filter="chaquetas">Chaquetas</button>
-                        <button class="gallery__filter" data-filter="misc">Misc</button>
+                        <button class="gallery__filter" data-filter="filtro-1">Filtro 1</button>
+                        <button class="gallery__filter" data-filter="filtro-2">Filtro 2</button>
+                        <button class="gallery__filter" data-filter="filtro-3">Filtro 3</button>
+                        <button class="gallery__filter" data-filter="filtro-4">Filtro 4</button>
                     </div>
                 </nav>
                 <h2 class="gallery__title">GALERIA</h2>
@@ -190,6 +153,43 @@
                     <h3 class="gallery__lightbox-title"></h3>
                     <p class="gallery__lightbox-category"></p>
                 </div>
+            </div>
+        </section>
+
+        <!-- [SOBRE MI] -->
+        <section class="about" id="sobre-mi">
+            <div class="about__background" aria-hidden="true">
+                <div class="about__parallax">
+                    <img class="about__background-image" src="src/components/organisms/about/img/about-background.png" alt=""
+                        loading="lazy">
+                </div>
+            </div>
+
+            <div class="about__container">
+                <article class="about__content">
+                    <figure class="about__profile">
+                        <img class="about__profile-img" src="src/components/organisms/about/img/about-perfil-1.jpg"
+                            alt="Retrato del artista">
+                    </figure>
+
+                    <div class="about__info">
+                        <h2 class="about__title">SOBRE MI</h2>
+                        <div class="about__text-container">
+                            <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <figure class="about__signature">
+                    <img class="about__signature-img" src="src/components/organisms/about/img/about-signature.png"
+                        alt="Firma del artista">
+                </figure>
             </div>
         </section>
 

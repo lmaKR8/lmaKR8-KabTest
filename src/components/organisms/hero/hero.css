@@ -5,7 +5,7 @@
     width: 100%;
     height: 100vh; /* Altura completa de la ventana */
     overflow: hidden; /* Evita que el contenido se desborde */
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);*/
 }
 
 .hero__video {
