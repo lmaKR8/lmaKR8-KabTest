@@ -99,7 +99,8 @@
 }
 
 .gallery__title {
-    order: 2; /* Asegura que esté a la derecha */
+    order: 2;
+    /* Asegura que esté a la derecha */
     margin: 0;
     font-family: var(--font-tittle-400);
     font-size: var(--font-size-72);

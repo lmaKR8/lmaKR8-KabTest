@@ -189,9 +189,14 @@
         var(--color-secundary-01) 100%);
 
     /* Category animations */
-    --category-slide-duration: 800ms;
-    --category-slide-bounce: cubic-bezier(0.34, 1.4, 0.64, 1);
-    --category-slide-hover-scale: 1.006;
+    --category-slide-duration: 800ms; /* Aumentamos la duración */
+    --category-slide-bounce: cubic-bezier(0.34, 1.2, 0.64, 1); /* Reducimos el rebote */
+    --category-slide-hover-scale: 1.003; /* Reducimos la escala */
+
+    /* Sombras más sutiles */
+    --category-slide-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3); /* Sombra inicial más suave */
+    --category-slide-shadow-hover: inset 0 3px 10px rgba(0, 0, 0, 0.2); /* Sombra interna más suave */
+    --category-slide-transform: scale(0.995) translateY(2px); /* Menos hundimiento y escala más sutil */
 
     /* Category text animations */
     --category-text-delay: calc(var(--category-slide-duration) * 0.5);
