@@ -76,7 +76,7 @@
 .gallery__filter--active {
     background: var(--color-primary);
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     transform: translateY(-1px);
     box-shadow: var(--gallery-shadow-hover);
 }
