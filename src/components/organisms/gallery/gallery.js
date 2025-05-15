@@ -228,8 +228,7 @@ class Gallery {
         // Limpieza de eventos
         document.removeEventListener('keydown', this.handleKeyboard);
         this.elements.lightbox?.removeEventListener('keydown', this.handleFocus);
-        
-        // ...existing code...
+
     }
 }
 

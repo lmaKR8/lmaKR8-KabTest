@@ -103,55 +103,205 @@
             <header class="gallery__header">
                 <nav class="gallery__nav">
                     <div class="gallery__filters">
-                        <button class="gallery__filter gallery__filter--active" data-filter="all">Todos</button>
-                        <button class="gallery__filter" data-filter="filtro-1">Filtro 1</button>
-                        <button class="gallery__filter" data-filter="filtro-2">Filtro 2</button>
-                        <button class="gallery__filter" data-filter="filtro-3">Filtro 3</button>
-                        <button class="gallery__filter" data-filter="filtro-4">Filtro 4</button>
+                        <button class="gallery__filter gallery__filter--active" data-filter="all">
+                            Todos
+                        </button>
+                        <button class="gallery__filter" data-filter="filtro-1">
+                            Filtro 1
+                        </button>
+                        <button class="gallery__filter" data-filter="filtro-2">
+                            Filtro 2
+                        </button>
+                        <button class="gallery__filter" data-filter="filtro-3">
+                            Filtro 3
+                        </button>
+                        <button class="gallery__filter" data-filter="filtro-4">
+                            Filtro 4
+                        </button>
                     </div>
                 </nav>
-                <h2 class="gallery__title">GALERIA</h2>
+                <h2 class="gallery__title">
+                    GALERIA
+                </h2>
             </header>
         
-            <div class="mansory-gallery">
-                <div class="column">
-                    <img src="src/components/organisms/gallery2/img/1.jpg">
-                    <img src="src/components/organisms/gallery2/img/2.jpg">
-                    <img src="src/components/organisms/gallery2/img/3.jpg">
-                    <img src="src/components/organisms/gallery2/img/4.jpg">
-                    <img src="src/components/organisms/gallery2/img/5.jpg">
-                </div>
-                <div class="column">
-                    <img src="src/components/organisms/gallery2/img/7.jpg">
-                    <img src="src/components/organisms/gallery2/img/6.jpg">
-                    <img src="src/components/organisms/gallery2/img/8.jpg">
-                    <img src="src/components/organisms/gallery2/img/9.jpg">
-                    <img src="src/components/organisms/gallery2/img/10.jpg">
-                </div>
-                <div class="column">
-                    <img src="src/components/organisms/gallery2/img/11.jpg">
-                    <img src="src/components/organisms/gallery2/img/13.jpg">
-                    <img src="src/components/organisms/gallery2/img/12.jpg">
-                    <img src="src/components/organisms/gallery2/img/15.jpg">
-                    <img src="src/components/organisms/gallery2/img/14.jpg">
-                </div>
-                <div class="column">
-                    <img src="src/components/organisms/gallery2/img/16.jpg">
-                    <img src="src/components/organisms/gallery2/img/17.jpg">
-                    <img src="src/components/organisms/gallery2/img/19.jpg">
-                    <img src="src/components/organisms/gallery2/img/18.jpg">
-                    <img src="src/components/organisms/gallery2/img/20.jpg">
-                </div>
+            <!-- Grid de imágenes -->
+            <div class="gallery__grid">
+                <!-- Img 1 -->
+                <article class="gallery__item" data-category="filtro-3">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/11.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">
+                            Nombre de la obra
+                        </figcaption>
+                    </figure>
+                </article>
+                <!-- Img 2 -->
+                <article class="gallery__item" data-category="filtro-1">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/1.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 3 -->
+                <article class="gallery__item" data-category="filtro-2">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/6.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 4 -->
+                <article class="gallery__item" data-category="filtro-4">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/16.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 5 -->
+                <article class="gallery__item" data-category="filtro-3">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/12.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 6 -->
+                <article class="gallery__item" data-category="filtro-4">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/17.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 7 -->
+                <article class="gallery__item" data-category="filtro-1">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/2.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 8 -->
+                <article class="gallery__item" data-category="filtro-2">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/7.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 9 -->
+                <article class="gallery__item" data-category="filtro-4">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/18.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 10 -->
+                <article class="gallery__item" data-category="filtro-2">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/8.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 11 -->
+                <article class="gallery__item" data-category="filtro-3">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/13.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 12 -->
+                <article class="gallery__item" data-category="filtro-1">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/3.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 13 -->
+                <article class="gallery__item" data-category="filtro-2">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/9.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 14 -->
+                <article class="gallery__item" data-category="filtro-1">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/4.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 15 -->
+                <article class="gallery__item" data-category="filtro-4">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/19.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 16 -->
+                <article class="gallery__item" data-category="filtro-3">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/14.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 17 -->
+                <article class="gallery__item" data-category="filtro-1">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/5.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>     
+                </article>
+                <!-- Img 18 -->
+                <article class="gallery__item" data-category="filtro-2">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/10.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 19 -->
+                <article class="gallery__item" data-category="filtro-3">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/15.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
+                <!-- Img 20 -->
+                <article class="gallery__item" data-category="filtro-4">
+                    <figure class="gallery__figure">
+                        <img class="gallery__image" data-src="src/components/organisms/gallery/img/20.jpg"
+                            data-title="Nombre de la obra" alt="Nombre de la obra">
+                        <figcaption class="gallery__caption">Nombre de la obra</figcaption>
+                    </figure>
+                </article>
             </div>
-        
-            <div class="mansory-lightbox">
-                <span class="mansory-lightbox__close">&times;</span>
-                <button class="mansory-lightbox__prev">&lang;</button>
-                <button class="mansory-lightbox__next">&rang;</button>
-                <img class="mansory-lightbox__image" src="" alt="">
-                <div class="gallery__lightbox-info">
-                    <h3 class="gallery__lightbox-title"></h3>
-                    <p class="gallery__lightbox-category"></p>
+            
+            <!-- Lightbox -->
+            <div class="gallery__lightbox">
+                <button class="gallery__lightbox-close" aria-label="Cerrar">&times;</button>
+                <button class="gallery__lightbox-prev" aria-label="Anterior">&lang;</button>
+                <button class="gallery__lightbox-next" aria-label="Siguiente">&rang;</button>
+                <div class="gallery__lightbox-content">
+                    <img class="gallery__lightbox-image" src="" alt="">
+                    <div class="gallery__lightbox-info">
+                        <h3 class="gallery__lightbox-title"></h3>
+                        <p class="gallery__lightbox-category"></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -325,7 +475,6 @@
     <script src="src/components/organisms/hero/hero.js"></script>
     <script src="src/components/organisms/category/category.js"></script>
     <script src="src/components/organisms/gallery/gallery.js"></script>
-    <script src="src/components/organisms/gallery2/gallery2.js"></script>
     <script src="src/components/organisms/about/about.js"></script>
     <script src="src/components/organisms/contact/contact.js"></script>
     <script src="src/components//organisms/footer/footer.js"></script>

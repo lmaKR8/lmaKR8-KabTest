@@ -100,7 +100,6 @@
 
 .gallery__title {
     order: 2;
-    /* Asegura que esté a la derecha */
     margin: 0;
     font-family: var(--font-tittle-400);
     font-size: var(--font-size-72);
@@ -112,21 +111,21 @@
 
 
 
-.mansory-gallery {
+.gallery__grid {
     display: flex;
     flex-wrap: wrap;
     margin: 0 5rem 3rem 5rem;
-    padding: 1rem 0.5rem;
+    padding: 1rem;
     position: relative;
 }
 
-.mansory-gallery .column {
-    flex: 25%;
+.gallery__grid .gallery__column {
+    flex: 24%;
 }
 
-.mansory-gallery .column img {
+.gallery__grid .gallery__column .gallery_image {
     border: 0.5rem solid #ffffff07;
-    border-radius: 1.5rem;
+    border-radius: 25px;
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -135,18 +134,34 @@
 }
 
 /* Efecto hover */
-.mansory-gallery .column img:hover {
+.gallery__grid .gallery__column .gallery_image:hover {
     transform: scale(1.03);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     filter: brightness(1.1);
 }
 
 /* Efecto active (al pulsar) */
-.mansory-gallery .column img:active {
+.gallery__grid .gallery__column .gallery_image:active {
     transform: scale(0.98);
     filter: brightness(0.9);
     transition: all 0.1s ease-in-out;
 }
+
+.gallery__caption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--color-white-50);
+    font-family: var(--font-text-400);
+    font-size: var(--font-size-20);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+
 
 /* Estilos del lightbox */
 .mansory-lightbox {

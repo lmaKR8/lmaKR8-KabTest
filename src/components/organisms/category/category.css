@@ -3,8 +3,8 @@
 .category {
     width: 100%;
     position: relative;
-    padding: 5rem 6rem;
-    margin: 1rem 0;
+    padding: 4rem 6rem 1rem 6rem;
+    margin-top: 2rem;
     background: var(--category-gradient);
     display: flex;
     flex-direction: column;

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.mansory-gallery .column img');
+    const images = document.querySelectorAll('.gallery__grid .gallery__column .gallery__image');
     const lightbox = document.querySelector('.mansory-lightbox');
     const lightboxImg = document.querySelector('.mansory-lightbox__image');
     const close = document.querySelector('.mansory-lightbox__close');
