@@ -40,7 +40,7 @@ class ContactForm {
         // Manejo del envío del formulario
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
     }
-
+    
     validateField(input) {
         const value = input.element.value.trim();
         const { isValid, message } = input.validate(value);

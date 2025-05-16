@@ -352,9 +352,12 @@
             <div class="contact__container">
                 <!-- Información de contacto -->
                 <div class="contact__info">
-                    <h2 class="contact__title">CONTACTO</h2>
+                    <h2 class="contact__title">
+                        CONTACTO
+                    </h2>
                     <p class="contact__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam magna sapien, ornare
-                        et dui a, facilisis ultrices ex. Ut faucibus cursus fringilla.</p>
+                        et dui a, facilisis ultrices ex. Ut faucibus cursus fringilla.
+                    </p>
                     <div class="contact__social">
                         <a href="https://instagram.com" class="contact__social-link" aria-label="Síguenos en Instagram"
                             target="_blank" rel="noopener">
@@ -376,29 +379,35 @@
                 <!-- Formulario -->
                 <form class="contact__form" id="contactForm" novalidate>
                     <div class="contact__form-group">
-                        <label class="contact__label" for="name">Nombre</label>
-                        <input type="text" class="contact__input" id="name" name="name" placeholder="Nombre" required>
+                        <input type="text" class="contact__input" id="name" name="name" placeholder="Nombre  y  Apellido" required>
+                        <label class="contact__label" for="name">Nombre y Apellido</label>
+                        <span class="contact__error" id="nameError"></span>              
                     </div>
 
                     <div class="contact__form-row">
                         <div class="contact__form-group">
-                            <label class="contact__label" for="phone">Fono</label>
                             <input type="tel" class="contact__input" id="phone" name="phone" placeholder="Fono" required>
+                            <label class="contact__label" for="phone">Fono</label>
+                            <span class="contact__error" id="phoneError"></span>
                         </div>
-
+                    
                         <div class="contact__form-group">
-                            <label class="contact__label" for="email">Mail</label>
-                            <input type="email" class="contact__input" id="email" name="email" placeholder="Mail" required>
-                        </div>
+                            <input type="email" class="contact__input" id="email" name="email" placeholder="Email" required>
+                            <label class="contact__label" for="email">Email</label>
+                            <span class="contact__error" id="emailError"></span>
+                        </div>              
                     </div>
 
                     <div class="contact__form-group contact__form-group--full">
+                        <textarea class="contact__input contact__input--textarea" id="message" name="message" placeholder="Mensaje"
+                            required></textarea>
                         <label class="contact__label" for="message">Mensaje</label>
-                        <textarea class="contact__input contact__input--textarea" id="message" name="message"
-                            placeholder="Mensaje" required></textarea>
+                        <span class="contact__error" id="messageError"></span>              
                     </div>
 
-                    <button type="submit" class="contact__submit">Enviar</button>
+                    <button type="submit" class="contact__submit">
+                        Enviar
+                    </button>
                 </form>
             </div>
         </section>
