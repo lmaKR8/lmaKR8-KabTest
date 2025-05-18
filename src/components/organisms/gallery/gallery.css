@@ -274,9 +274,3 @@
 .gallery__lightbox-prev { left: 3rem; top: 50%; }
 .gallery__lightbox-next { right: 3rem; top: 50%; }
 
-/* Ocultar en pantallas menores a 1024px */
-@media (max-width: 1024px) {
-    .gallery {
-        display: none;
-    }
-}
